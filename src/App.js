@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/signup' element={<h1>Signup</h1>}></Route>
       <Route path='*' element={<h1>404 Page not found</h1>}></Route>
     </Routes>
+    <Footer/>
     </BrowserRouter>
   );
 }

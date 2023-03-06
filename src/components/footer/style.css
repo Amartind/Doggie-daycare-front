@@ -1,0 +1,20 @@
+.Footer{
+    display:flex;
+    justify-content: space-around;
+    height: 3vh;
+    background-color: aqua;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.FooterLink{
+    text-decoration: none;
+    color: black;
+    padding: 2px;
+}
+
+.FooterLink:hover{
+    background-color: blue;
+    color:azure;
+}
