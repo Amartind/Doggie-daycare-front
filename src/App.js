@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Navbar/>
+    <Routes>
+      <Route path='/' element={<h1>Dashboard</h1>}></Route>
+      <Route path='/createaplaydate' element={<h1>Make a date</h1>}></Route>
+      <Route path='/currentplaydates' element={<h1>Local dates near you</h1>}></Route>
+      <Route path='/addapooch' element={<h1>Add a dog</h1>}></Route>
+      <Route path='/mydoggies' element={<h1>My dogs</h1>}></Route>
+      <Route path='/profile' element={<h1>Profile</h1>}></Route>
+      <Route path='/login' element={<h1>Login</h1>}></Route>
+      <Route path='/signup' element={<h1>Signup</h1>}></Route>
+      <Route path='*' element={<h1>404 Page not found</h1>}></Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
