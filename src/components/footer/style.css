@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .Footer{
     display:flex;
     justify-content: space-around;
