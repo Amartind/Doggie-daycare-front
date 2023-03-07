@@ -23,8 +23,8 @@ function Login() {
   };
 
   return (
-    <div>
-      <form className="loginform">
+    <div className="container">
+      <form className="loginform grid gap-4 grid-cols-1 grid-rows-2">
         <input
           value={username}
           name="username"

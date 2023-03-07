@@ -3,7 +3,6 @@ import './style.css'
 
  
 function Signup() {
-  // Here we set two state variables for firstName and lastName using `useState`
   const [fullname, setFullName] = useState('');
   const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -43,8 +42,8 @@ function Signup() {
   };
 
   return (
-    <div>
-      <form className="signupform">
+    <div className="container">
+      <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
         <input
             value={fullname}
             name="fullname"
