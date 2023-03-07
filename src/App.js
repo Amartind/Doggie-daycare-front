@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/footer';
 import Login from './components/login';
 import Signup from './components/signup';
+import Profile from './components/profile';
+import Addpooch from './components/addapooch';
 
 function App() {
   return (
@@ -12,9 +14,9 @@ function App() {
       <Route path='/' element={<h1>Dashboard</h1>}></Route>
       <Route path='/createaplaydate' element={<h1>Make a date</h1>}></Route>
       <Route path='/currentplaydates' element={<h1>Local dates near you</h1>}></Route>
-      <Route path='/addapooch' element={<h1>Add a dog</h1>}></Route>
+      <Route path='/addapooch' element={<Addpooch/>}></Route>
       <Route path='/mydoggies' element={<h1>My dogs</h1>}></Route>
-      <Route path='/profile' element={<h1>Profile</h1>}></Route>
+      <Route path='/profile' element={<h1><Profile/></h1>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/signup' element={<Signup/>}></Route>
       <Route path='*' element={<h1>404 Page not found</h1>}></Route>
