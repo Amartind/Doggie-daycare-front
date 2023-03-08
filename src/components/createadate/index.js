@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css'
 
-function createPlayDate() {
+function CreateADate() {
     const [eventTitle, setEventTitle] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
@@ -13,15 +13,15 @@ function createPlayDate() {
 
         const { name, value } = e.target;
 
-        if (name === eventTitle) {
+        if (name === "eventTitle") {
             return setEventTitle(value)
-        } else if (name === date) {
+        } else if (name === "date") {
             return setDate(value)
-        } else if (name === time) {
+        } else if (name === "time") {
             return setTime(value)
-        } else if (name === location) {
+        } else if (name === "location") {
             return setLocation(value)
-        } else if (name === dateName) {
+        } else if (name === "dateName") {
             return setDateNotes(value)
         }
     };
@@ -34,8 +34,8 @@ function createPlayDate() {
     return (
         <div className="container">
             <p>Make a Play Date</p>
-            <form className="dateform ">
-                <div className="grid p-2 grid-cols-2 grid-rows-5">
+            <form className="dateform grid p-4 grid-cols-2 grid-rows-6">
+                <div className="grid p-4 grid-cols-1 grid-rows-5">
                     <input
                         value={eventTitle}
                         name="eventTitle"
@@ -85,4 +85,4 @@ function createPlayDate() {
     )
 }
 
-export default createPlayDate
+export default CreateADate
