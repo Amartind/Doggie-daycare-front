@@ -1,0 +1,22 @@
+
+.container{
+    justify-self: center;
+}
+
+.dateform{
+    border: 5px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    max-width: 80%;
+}
+.dateinput{
+    padding: 3%;
+}
+.datebutton{
+    border: 2px solid red;
+    max-height: 5%;
+}
+.datefield{
+    border: 1px round grey;
+}
