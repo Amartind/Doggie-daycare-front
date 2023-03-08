@@ -34,8 +34,8 @@ function createPlayDate() {
     return (
         <div className="container">
             <p>Make a Play Date</p>
-            <form className="dogform grid p-2 grid-cols-2 grid-rows-6">
-                <div className="grid gap-4 grid-cols-1 grid-rows-7">
+            <form className="dateform grid p-2 grid-cols-2 grid-rows-6">
+                <div className="">
                     <input
                         value={eventTitle}
                         name="eventTitle"
@@ -43,7 +43,7 @@ function createPlayDate() {
                         type="text"
                         placeholder='Event Title'
                     />
-                    <div className="grid gap-4 grid-cols-1 grid-rows-7">
+                    <div className="">
                         <input
                             value={date}
                             name="date"
@@ -51,7 +51,7 @@ function createPlayDate() {
                             type='text'
                             placeholder='Date' />
                     </div>
-                    <div className="grid gap-4 grid-cols-1 grid-rows-7">
+                    <div className="">
                         <input
                             value={time}
                             name='time'
@@ -67,7 +67,7 @@ function createPlayDate() {
                             type="text"
                             placeholder='Location' />
                     </div>
-                    <div className="grid gap-4 grid-cols-1 grid-rows-7">
+                    <div className="">
                         <input
                             value={dateNotes}
                             name='dateName'
