@@ -21,7 +21,7 @@ function createPlayDate() {
             return setTime(value)
         } else if (name === location) {
             return setLocation(value)
-        } else if (name === dateNotes) {
+        } else if (name === dateName) {
             return setDateNotes(value)
         }
     };
