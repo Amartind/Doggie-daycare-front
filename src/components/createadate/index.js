@@ -34,8 +34,8 @@ function createPlayDate() {
     return (
         <div className="container">
             <p>Make a Play Date</p>
-            <form className="dateform grid p-2 grid-cols-2 grid-rows-6">
-                <div className="">
+            <form className="dateform ">
+                <div className="grid p-2 grid-cols-2 grid-rows-5">
                     <input
                         value={eventTitle}
                         name="eventTitle"
@@ -43,31 +43,30 @@ function createPlayDate() {
                         type="text"
                         placeholder='Event Title'
                     />
-                    <div className="">
+                    
                         <input
                             value={date}
                             name="date"
                             onChange={handleInputChange}
                             type='text'
                             placeholder='Date' />
-                    </div>
-                    <div className="">
+                    
                         <input
                             value={time}
                             name='time'
                             onChange={handleInputChange}
                             type="text"
                             placeholder='Time' />
-                    </div>
-                    <div>
+                    
+                    
                         <input
                             value={location}
                             name='location'
                             onChange={handleInputChange}
                             type="text"
                             placeholder='Location' />
-                    </div>
-                    <div className="">
+                    
+                    
                         <input
                             value={dateNotes}
                             name='dateName'
@@ -75,7 +74,7 @@ function createPlayDate() {
                             type="text"
                             placeholder='Date Notes'
                         />
-                    </div>
+                    
                 </div>
                 <button type="button" onClick={handleFormSubmit}>Send</button>
             </form>
