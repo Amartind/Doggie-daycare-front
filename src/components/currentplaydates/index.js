@@ -16,10 +16,11 @@ function Currentdates() {
         if (name === "filterLocation") {
             return setFilterLocation(value)
         } else if (name === "savedLocation") {
-            if(true){
+            if(savedLocation){
                 // use saved location instead of value
-                return setSavedLocation(value)
+                return setSavedLocation(false)
             }
+            else return setSavedLocation(true)
         } else if (name === "radius") {
             return setRadius(value)
         } else if (name === "breed") {
@@ -38,7 +39,7 @@ function Currentdates() {
         <div className="container">
             <p>View Play Dates</p>
             <form className="">
-                <div className="filterContainer">
+                <div className="filterContainer grid-cols-5 grid-rows-1">
                     <input
                         value={filterLocation}
                         name="filterLocation"
@@ -47,15 +48,17 @@ function Currentdates() {
                         placeholder='Location'
                         className='filterLocation'
                     />
-                    
-                    <input
-                        value={savedLocation}
-                        name="savedLocation"
-                        onChange={handleInputChange}
-                        type='checkbox'
-                        placeholder='Date' 
-                        className='savedLocation'
-                    />
+                    <div className='grid-cols-1 grid-rows-2'>
+                        <p>Use saved location?</p>
+                        <input
+                            value={savedLocation}
+                            name="savedLocation"
+                            onChange={handleInputChange}
+                            type='checkbox'
+                            className='savedLocation'
+                        />
+
+                    </div>
                 
                     <input
                         value={radius}
