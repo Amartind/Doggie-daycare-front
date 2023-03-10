@@ -11,7 +11,7 @@ function Addpooch() {
     const [snipsnip, setSnipSnip] = useState(false);
     const [vaccinated, setVaccinated] = useState(false);
     const maleSelector = document.getElementById("male")
-    const femaleSelector = document.getElementById("female")
+    // const femaleSelector = document.getElementById("female")
   
     const handleInputChange = (e) => {
       // Getting the value and name of the input which triggered the change

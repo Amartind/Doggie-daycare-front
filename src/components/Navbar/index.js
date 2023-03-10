@@ -21,17 +21,17 @@ const Navbar = () => {
 
     )
     //  else
-    return (
-        <div className="Navbar">
-            <Link to="/">Home</Link>
+    // return (
+    //     <div className="Navbar">
+    //         <Link to="/">Home</Link>
 
-            <div className="signedin">
-                <Link to="/currentplaydates">Dogs in your area</Link>
-                <Link to="/createaplaydate">Make a meet up</Link>
-                <Link to="/profile">Profile</Link>
-            </div>
-        </div>
-    )
+    //         <div className="signedin">
+    //             <Link to="/currentplaydates">Dogs in your area</Link>
+    //             <Link to="/createaplaydate">Make a meet up</Link>
+    //             <Link to="/profile">Profile</Link>
+    //         </div>
+    //     </div>
+    // )
 
 }
 
