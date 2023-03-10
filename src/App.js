@@ -7,8 +7,12 @@ import Profile from './components/profile';
 import Addpooch from './components/addapooch';
 import CreateADate from './components/createadate';
 import Currentdates from './components/currentplaydates';
+import Dashboard from './components/dashboard';
+import Hompage from './components/homepage';
+
 
 function App() {
+  // const user = await fetch(localhost/api/users/5)
   return (
     <BrowserRouter>
     <Link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -18,7 +22,8 @@ function App() {
     <Link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/luxonauta/luxa@1.1/dist/compressed/luxa.css"/>
     <Navbar/>
     <Routes>
-      <Route path='/' element={<h1>Dashboard</h1>}></Route>
+      <Route path='/' element={<Hompage/>}></Route>
+      <Route path='/dashboard' element={<Dashboard/>}></Route>
       <Route path='/createaplaydate' element={<CreateADate/>}></Route>
       <Route path='/currentplaydates' element={<Currentdates/>}></Route>
       <Route path='/addapooch' element={<Addpooch/>}></Route>
@@ -26,9 +31,9 @@ function App() {
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/signup' element={<Signup/>}></Route>
-      <Route path='/signup' element={<Signup/>}></Route>
-      <Route path='*' element={<h1>404 Page not found</h1>}></Route>
+      <Route path='*' element={<Hompage/>}></Route>
     </Routes>
+
     <Footer/>
     </BrowserRouter>
   );
