@@ -3,3 +3,10 @@
     justify-content: space-around;
     background-color: #0984e3 ;
 }
+.navlink:hover{
+    color: #81ecec ;
+
+}
+.notsignedin{
+ display: inline;
+}
