@@ -1,0 +1,39 @@
+.box{
+    margin:auto;
+    width:80%;
+    background-color: whitesmoke;
+    height: 94vh;
+}
+
+.bottomimage{
+    display: flex;
+    height: 300px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.topimage{
+    height: 300px;
+    margin-left: 10%;
+    margin-top: 4%;
+}
+
+.flex-me{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.flex-me2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width:80%;
+    margin: auto;
+}
+
+.text{
+    display: block;
+    width: 30%;
+    margin-top: 6%
+}
