@@ -36,63 +36,66 @@ function Currentdates() {
     };
 
     return (
-        <div className="container">
-            <p>View Play Dates</p>
-            <form className="">
-                <div className="filterContainer grid-cols-5 grid-rows-1">
-                    <input
-                        value={filterLocation}
-                        name="filterLocation"
-                        onChange={handleInputChange}
-                        type="text"
-                        placeholder='Location'
-                        className='filterLocation'
-                    />
-                    <div className='grid-cols-1 grid-rows-2'>
-                        <p>Use saved location?</p>
+        <div className="container ">
+            <div className=' grid grid-cols-1 grid-rows-2'>
+
+                <p className='title'>View Play Dates</p>
+                <form className="dateform grid-rows-2">
+                    <div className="filterContainer ">
                         <input
-                            value={savedLocation}
-                            name="savedLocation"
+                            value={filterLocation}
+                            name="filterLocation"
                             onChange={handleInputChange}
-                            type='checkbox'
-                            className='savedLocation'
+                            type="text"
+                            placeholder='Location'
+                            className='filterLocation'
+                        />
+                        <div className='grid-cols-1 grid-rows-2'>
+                            <p>Use saved location?</p>
+                            <input
+                                value={savedLocation}
+                                name="savedLocation"
+                                onChange={handleInputChange}
+                                type='checkbox'
+                                className='savedLocation'
+                            />
+
+                        </div>
+
+                        <input
+                            value={radius}
+                            name='radius'
+                            onChange={handleInputChange}
+                            type="text"
+                            placeholder='Radius' 
+                            className='radius'
                         />
 
+                        <input
+                            value={breed}
+                            name='breed'
+                            onChange={handleInputChange}
+                            type="text"
+                            placeholder='Breed' 
+                            className='breed'
+                        />
+                        <button className="dateButton" type="button" onClick={handleFormSubmit}>Send</button>
                     </div>
-                
-                    <input
-                        value={radius}
-                        name='radius'
-                        onChange={handleInputChange}
-                        type="text"
-                        placeholder='Radius' 
-                        className='radius'
-                    />
-                
-                    <input
-                        value={breed}
-                        name='breed'
-                        onChange={handleInputChange}
-                        type="text"
-                        placeholder='Breed' 
-                        className='breed'
-                    />
-                    <button className="dateButton" type="button" onClick={handleFormSubmit}>Send</button>
-                </div>
-                <div className='displayArea'>
-                    <card className="displayCard">
-                        <img src='../../public/assets/Puddle.png'></img>
-                        <p className='displayName'>Puddle</p>
-                        <p className='displayAge'>1</p>
-                        <p className='displayBreed'>Standard Poodle</p>
-                        <p className='displayPersonality'>Chill goofy</p>
-                        <p className='displaySnipSnip'>No</p>
-                        <p className='displayVaccinated'>Yes</p>
-                        <p className='displayLocation'>Edith Moulton Park</p>
-                    </card>
+                    <div className='displayArea'>
+                        <card className="displayCard">
+                            <img src='../../public/assets/Puddle.png'></img>
+                            <p className='displayName'>Puddle</p>
+                            <p className='displayAge'>1</p>
+                            <p className='displayBreed'>Standard Poodle</p>
+                            <p className='displayPersonality'>Chill goofy</p>
+                            <p className='displaySnipSnip'>No</p>
+                            <p className='displayVaccinated'>Yes</p>
+                            <p className='displayLocation'>Edith Moulton Park</p>
+                        </card>
 
-                </div>
-            </form>
+                    </div>
+                </form>
+            </div>
 
 
 

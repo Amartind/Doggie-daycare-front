@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Footer from './components/footer';
 import Login from './components/login';
@@ -15,6 +15,11 @@ function App() {
   // const user = await fetch(localhost/api/users/5)
   return (
     <BrowserRouter>
+    <Link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <Link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet"/>
+    <Link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/luxonauta/luxa@1.1/dist/expanded/luxa.css"/>
+    <Link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/luxonauta/luxa@1.1/dist/compressed/luxa.css"/>
     <Navbar/>
     <Routes>
       <Route path='/' element={<Hompage/>}></Route>

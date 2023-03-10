@@ -40,8 +40,8 @@ function CreateADate() {
     return (
         <div className="container">
             <p>Make a Play Date</p>
-            <form className="dateform grid p-4 grid-cols-2 grid-rows-5 rounded-md">
-                <div className="dateinput grid p-4 grid-cols-1 grid-rows-5">
+            <form className=" dateform grid p-4 grid-cols-2 grid-rows-5 rounded-md">
+                <div className=" dateinput grid p-4 grid-cols-1 grid-rows-5">
                     <input
                         value={eventTitle}
                         name="eventTitle"
@@ -81,16 +81,17 @@ function CreateADate() {
                 
                 
                     <input
+                        className='datefield py-8'
                         value={dateNotes}
                         name='dateName'
                         onChange={handleInputChange}
                         type="text"
                         placeholder='Date Notes'
-                        className='datefield'
                     />
                     
+                    <button className="datebutton rounded order-last" type="button" onClick={handleFormSubmit}>Send</button>
                 </div>
-                <button className="datebutton" type="button" onClick={handleFormSubmit}>Send</button>
+                
             </form>
 
 

@@ -9,11 +9,11 @@ const Navbar = () => {
     // if no user logged in
     return (
         <div className="Navbar">
-            <Link to="/">Home</Link>
+            <Link to="/" className="navlink">Home</Link>
 
             <div className="notsignedin ">
-                <Link to="/login" className="p-4">Login</Link>
-                <Link to="/signup" className="p-4">Sign-up</Link>
+                <Link to="/login" className="p-4 navlink">Login</Link>
+                <Link to="/signup" className="p-4 navlink">Sign-up</Link>
             </div>
 
 
