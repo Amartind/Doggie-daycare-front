@@ -29,54 +29,68 @@ function CreateADate() {
     // Prevents refreshing the page a default behavior
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        alert('Date added');
+        setEventTitle("");
+        setDate("");
+        setTime("");
+        setLocation("");
+        setDateNotes("")
     };
 
     return (
         <div className="container">
             <p>Make a Play Date</p>
-            <form className="dateform grid p-4 grid-cols-2 grid-rows-6">
-                <div className="grid p-4 grid-cols-1 grid-rows-5">
+            <form className="dateform grid p-4 grid-cols-2 grid-rows-5 rounded-md">
+                <div className="dateinput grid p-4 grid-cols-1 grid-rows-5">
                     <input
                         value={eventTitle}
                         name="eventTitle"
                         onChange={handleInputChange}
                         type="text"
                         placeholder='Event Title'
+                        className='datefield'
                     />
                     
-                        <input
-                            value={date}
-                            name="date"
-                            onChange={handleInputChange}
-                            type='text'
-                            placeholder='Date' />
-                    
-                        <input
-                            value={time}
-                            name='time'
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder='Time' />
-                    
-                    
-                        <input
-                            value={location}
-                            name='location'
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder='Location' />
-                    
-                    
-                        <input
-                            value={dateNotes}
-                            name='dateName'
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder='Date Notes'
-                        />
+                    <input
+                        value={date}
+                        name="date"
+                        onChange={handleInputChange}
+                        type='text'
+                        placeholder='Date' 
+                        className='datefield'
+                    />
+                
+                    <input
+                        value={time}
+                        name='time'
+                        onChange={handleInputChange}
+                        type="text"
+                        placeholder='Time' 
+                        className='datefield'
+                    />
+                
+                
+                    <input
+                        value={location}
+                        name='location'
+                        onChange={handleInputChange}
+                        type="text"
+                        placeholder='Location' 
+                        className='datefield'
+                    />
+                
+                
+                    <input
+                        value={dateNotes}
+                        name='dateName'
+                        onChange={handleInputChange}
+                        type="text"
+                        placeholder='Date Notes'
+                        className='datefield'
+                    />
                     
                 </div>
-                <button type="button" onClick={handleFormSubmit}>Send</button>
+                <button className="datebutton" type="button" onClick={handleFormSubmit}>Send</button>
             </form>
 
 

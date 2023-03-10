@@ -65,9 +65,9 @@ function Addpooch() {
                 {/* TODO:select only 1 and change values based off what is selected */}
                 <div className="p-4">
                 
-                    <input value={doggender} type="checkbox" id="male" name="male" onChange={handleInputChange} />
+                    <input value={doggender} type="checkbox.radio" id="male" name="male" onChange={handleInputChange} />
                     <label htmlFor="male"> Male</label>
-                    <input value={doggender} type="checkbox" id="female" name="female" onChange={handleInputChange} />
+                    <input value={doggender} type="checkbox.radio" id="female" name="female" onChange={handleInputChange} />
                     <label htmlFor="female"> Female</label>
 
                 </div>
