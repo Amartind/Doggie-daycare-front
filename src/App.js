@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Footer from './components/footer';
 import Login from './components/login';
@@ -12,6 +12,7 @@ import Hompage from './components/homepage';
 
 
 function App() {
+  // const user = await fetch(localhost/api/users/5)
   return (
     <BrowserRouter>
     <Navbar/>
