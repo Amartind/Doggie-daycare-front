@@ -1,15 +1,12 @@
 import React from "react";
 import './style.css'
-import Pup1 from './pup1.png';
-import Pup2 from './pup2.png';
-import Pup3 from './pup3.png';
 
-export const Dashboard = () => {
+export default function Dashboard() {
   return (
     <div className='mainBody'>
-        <h1 className="title">About</h1>
+        <h1 className="title">Welcome!</h1>
         <div className="flex flexME2">
-        {/* <img className="profilePic" src={ProfilePic} alt="Profile Pic" /> */}
+        <h3>If this is your first time here let me show you arround!</h3>
         <p className='bold'>Always on a mission to travel!</p>
         </div>
         </div>
