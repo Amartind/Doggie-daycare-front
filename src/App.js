@@ -6,6 +6,7 @@ import Signup from './components/signup';
 import Profile from './components/profile';
 import Addpooch from './components/addapooch';
 import CreateADate from './components/createadate';
+import Currentdates from './components/currentplaydates';
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
     <Routes>
       <Route path='/' element={<h1>Dashboard</h1>}></Route>
       <Route path='/createaplaydate' element={<CreateADate/>}></Route>
-      <Route path='/currentplaydates' element={<h1>Local dates near you</h1>}></Route>
+      <Route path='/currentplaydates' element={<Currentdates/>}></Route>
       <Route path='/addapooch' element={<Addpooch/>}></Route>
       <Route path='/mydoggies' element={<h1>My dogs</h1>}></Route>
-      <Route path='/profile' element={<h1><Profile/></h1>}></Route>
+      <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
+      <Route path='/signup' element={<Signup/>}></Route>
       <Route path='/signup' element={<Signup/>}></Route>
       <Route path='*' element={<h1>404 Page not found</h1>}></Route>
     </Routes>
