@@ -31,6 +31,7 @@ function Login() {
           onChange={handleInputChange}
           type="text"
           placeholder="Username"
+          className="inputfield"
         />
         <input
           value={password}
@@ -38,6 +39,7 @@ function Login() {
           onChange={handleInputChange}
           type="password"
           placeholder="Password"
+          className="inputfield"
         />
         <button type="button" onClick={handleFormSubmit}>
           Submit
