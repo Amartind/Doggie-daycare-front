@@ -36,28 +36,28 @@ function Currentdates() {
     };
 
     return (
-        <div className="container ">
-            <div className=' grid grid-cols-1 grid-rows-2'>
+        <div className="datemaincontainer  flex justify-center h-screen m-1">
+            <div className=' flex flex-col '>
 
-                <p className='title'>View Play Dates</p>
-                <form className="dateform grid-rows-2">
-                    <div className="filterContainer ">
+                <p className='title flex justify-self-center'>View Play Dates</p>
+                <form className="dateform flex flex-col max-h-fit ">
+                    <div className="filterContainer flex flex-auto flex-row">
                         <input
                             value={filterLocation}
                             name="filterLocation"
                             onChange={handleInputChange}
                             type="text"
                             placeholder='Location'
-                            className='filterLocation'
+                            className='filterLocation dateinput flex-auto'
                         />
-                        <div className='grid-cols-1 grid-rows-2'>
-                            <p>Use saved location?</p>
+                        <div className='flex flex-col max-h-fit'>
+                            <sub>Use saved location?</sub>
                             <input
                                 value={savedLocation}
                                 name="savedLocation"
                                 onChange={handleInputChange}
                                 type='checkbox'
-                                className='savedLocation'
+                                className='savedLocation dateinput flex-auto'
                             />
 
                         </div>
@@ -68,7 +68,7 @@ function Currentdates() {
                             onChange={handleInputChange}
                             type="text"
                             placeholder='Radius' 
-                            className='radius'
+                            className='radius dateinput flex-auto'
                         />
 
                         <input
@@ -77,21 +77,63 @@ function Currentdates() {
                             onChange={handleInputChange}
                             type="text"
                             placeholder='Breed' 
-                            className='breed'
+                            className='breed dateinput flex-auto'
                         />
                         <button className="dateButton" type="button" onClick={handleFormSubmit}>Send</button>
                     </div>
-                    <div className='displayArea'>
-                        <card className="displayCard">
-                            <img src='../../public/assets/Puddle.png'></img>
+                    <div className='displayArea flex flex-row gap-1'>
+                        
+                        <card className="displayCard flex flex-col flex-auto ">
+                            <img src='../../public/assets/Puddle.png' className='object-contain md:object-scale-down pupimg' alt='petnamehere'></img>
                             <p className='displayName'>Puddle</p>
                             <p className='displayAge'>1</p>
                             <p className='displayBreed'>Standard Poodle</p>
                             <p className='displayPersonality'>Chill goofy</p>
                             <p className='displaySnipSnip'>No</p>
                             <p className='displayVaccinated'>Yes</p>
-                            <p className='displayLocation'>Edith Moulton Park</p>
+                            <p className='displayLocation '>Edith Moulton Park</p>
                         </card>
+                        <card className="displayCard flex flex-col flex-auto ">
+                            <img src='../../public/assets/Puddle.png' className='object-contain md:object-scale-down pupimg' alt='petnamehere2'></img>
+                            <p className='displayName'>Puddle</p>
+                            <p className='displayAge'>1</p>
+                            <p className='displayBreed'>Standard Poodle</p>
+                            <p className='displayPersonality'>Chill goofy</p>
+                            <p className='displaySnipSnip'>No</p>
+                            <p className='displayVaccinated'>Yes</p>
+                            <p className='displayLocation '>Edith Moulton Park</p>
+                        </card>
+                        <card className="displayCard flex flex-col flex-auto ">
+                            <img src='../../public/assets/Puddle.png' className='object-contain md:object-scale-down pupimg' alt='petnamehere3'></img>
+                            <p className='displayName'>Puddle</p>
+                            <p className='displayAge'>1</p>
+                            <p className='displayBreed'>Standard Poodle</p>
+                            <p className='displayPersonality'>Chill goofy</p>
+                            <p className='displaySnipSnip'>No</p>
+                            <p className='displayVaccinated'>Yes</p>
+                            <p className='displayLocation '>Edith Moulton Park</p>
+                        </card>
+                        <card className="displayCard flex flex-col flex-auto ">
+                            <img src='../../public/assets/Puddle.png' className='object-contain md:object-scale-down pupimg' alt='petnamehere4'></img>
+                            <p className='displayName'>Puddle</p>
+                            <p className='displayAge'>1</p>
+                            <p className='displayBreed'>Standard Poodle</p>
+                            <p className='displayPersonality'>Chill goofy</p>
+                            <p className='displaySnipSnip'>No</p>
+                            <p className='displayVaccinated'>Yes</p>
+                            <p className='displayLocation '>Edith Moulton Park</p>
+                        </card>
+                        <card className="displayCard flex flex-col flex-auto ">
+                            <img src='../../public/assets/Puddle.png' className='object-contain md:object-scale-down pupimg' alt='petnamehere5'></img>
+                            <p className='displayName'>Puddle</p>
+                            <p className='displayAge'>1</p>
+                            <p className='displayBreed'>Standard Poodle</p>
+                            <p className='displayPersonality'>Chill goofy</p>
+                            <p className='displaySnipSnip'>No</p>
+                            <p className='displayVaccinated'>Yes</p>
+                            <p className='displayLocation '>Edith Moulton Park</p>
+                        </card>
+                        
 
                     </div>
                 </form>

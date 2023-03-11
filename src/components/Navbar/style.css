@@ -1,7 +1,9 @@
 .Navbar{
-    display:flex;
-    justify-content: space-around;
+    
     background-color: #0984e3 ;
+    margin: 5px;
+    padding: 2px;
+   
 }
 .navlink:hover{
     color: #81ecec ;

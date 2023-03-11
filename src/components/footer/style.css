@@ -7,9 +7,10 @@
     justify-content: space-around;
     height: 3vh;
     background-color: #4FB477;
-    position: absolute;
     bottom: 0;
-    width: 100%;
+    margin: 5px;
+    padding: 2px;
+   
 }
 
 .FooterLink{
