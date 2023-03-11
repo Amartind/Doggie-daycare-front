@@ -8,14 +8,18 @@ const Navbar = () => {
     // still needs styling
     // if no user logged in
     return (
-        <div className="Navbar">
-            <Link to="/" className="navlink">Home</Link>
+        <div>
+            <p className="text-5xl flex justify-center">Doggie Daycare</p>
+            <div className="Navbar grid grid-cols-2">
+                <Link to="/" className="navlink ">Home</Link>
 
-            <div className="notsignedin ">
-                <Link to="/login" className="p-4 navlink">Login</Link>
-                <Link to="/signup" className="p-4 navlink">Sign-up</Link>
+                <div className="notsignedin justify-self-end ">
+                    <Link to="/login" className="p-4 navlink">Login</Link>
+                    <Link to="/signup" className="p-4 navlink">Sign-up</Link>
+                </div>
+
+
             </div>
-
 
         </div>
 
