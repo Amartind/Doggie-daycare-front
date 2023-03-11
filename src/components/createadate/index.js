@@ -38,61 +38,62 @@ function CreateADate() {
     };
 
     return (
-        <div className="container">
-            <p>Make a Play Date</p>
-            <form className=" dateform grid p-4 grid-cols-2 grid-rows-5 rounded-md">
-                <div className=" dateinput grid p-4 grid-cols-1 grid-rows-5">
-                    <input
-                        value={eventTitle}
-                        name="eventTitle"
-                        onChange={handleInputChange}
-                        type="text"
-                        placeholder='Event Title'
-                        className='datefield'
-                    />
-                    
-                    <input
-                        value={date}
-                        name="date"
-                        onChange={handleInputChange}
-                        type='text'
-                        placeholder='Date' 
-                        className='datefield'
-                    />
-                
-                    <input
-                        value={time}
-                        name='time'
-                        onChange={handleInputChange}
-                        type="text"
-                        placeholder='Time' 
-                        className='datefield'
-                    />
-                
-                
-                    <input
-                        value={location}
-                        name='location'
-                        onChange={handleInputChange}
-                        type="text"
-                        placeholder='Location' 
-                        className='datefield'
-                    />
-                
-                
-                    <input
-                        className='datefield py-8'
-                        value={dateNotes}
-                        name='dateName'
-                        onChange={handleInputChange}
-                        type="text"
-                        placeholder='Date Notes'
-                    />
-                    
-                    <button className="datebutton rounded order-last" type="button" onClick={handleFormSubmit}>Send</button>
-                </div>
-                
-            </form>
+        <div className="container flex flex-col justify-center justify-self-center rounded flex-auto">
+            <p className='flex justify-center flex-auto'>Make a Play Date</p>
+            <div className='flex justify-center flex-auto'>
+                <form className=" dateform grid p-4 grid-cols-1 grid-rows-5 rounded-md">
+                    <div className=" dateinput grid p-4 grid-cols-1 grid-rows-5">
+                        <input
+                            value={eventTitle}
+                            name="eventTitle"
+                            onChange={handleInputChange}
+                            type="text"
+                            placeholder='Event Title'
+                            className='datefield inputfield'
+                        />
+
+                        <input
+                            value={date}
+                            name="date"
+                            onChange={handleInputChange}
+                            type='text'
+                            placeholder='Date' 
+                            className='datefield inputfield'
+                        />
+
+                        <input
+                            value={time}
+                            name='time'
+                            onChange={handleInputChange}
+                            type="text"
+                            placeholder='Time' 
+                            className='datefield inputfield'
+                        />
+
+
+                        <input
+                            value={location}
+                            name='location'
+                            onChange={handleInputChange}
+                            type="text"
+                            placeholder='Location' 
+                            className='datefield inputfield'
+                        />
+
+
+                        <input
+                            value={dateNotes}
+                            name='dateName'
+                            onChange={handleInputChange}
+                            type="text"
+                            placeholder='Date Notes'
+                            className='datefield py-8 inputfield'
+                        />
+
+                        <button className="datebutton rounded order-last" type="button" onClick={handleFormSubmit}>Send</button>
+                    </div>
+                </form>
+            </div>
 
 
 

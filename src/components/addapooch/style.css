@@ -1,0 +1,11 @@
+.dogcontainer{
+    border: 5px solid salmon;
+}
+.adddogbtn{
+    border: 2px solid rgb(173, 35, 20);
+    max-width: fit-content;
+}
+.inputfield{
+    background-color: beige;
+    border: 2px solid grey;
+}

@@ -39,16 +39,16 @@ function Currentdates() {
         <div className="datemaincontainer  flex justify-center h-screen m-1">
             <div className=' flex flex-col '>
 
-                <p className='title flex justify-self-center'>View Play Dates</p>
-                <form className="dateform flex flex-col max-h-fit ">
-                    <div className="filterContainer flex flex-auto flex-row">
+                <p className='title flex justify-center'>View Play Dates</p>
+                <form className="dateform flex flex-col max-h-fit">
+                    <div className="filterContainer flex flex-auto flex-row flex-wrap">
                         <input
                             value={filterLocation}
                             name="filterLocation"
                             onChange={handleInputChange}
                             type="text"
                             placeholder='Location'
-                            className='filterLocation dateinput flex-auto'
+                            className='filterLocation dateinput flex-auto inputfield'
                         />
                         <div className='flex flex-col max-h-fit'>
                             <sub>Use saved location?</sub>
@@ -68,7 +68,7 @@ function Currentdates() {
                             onChange={handleInputChange}
                             type="text"
                             placeholder='Radius' 
-                            className='radius dateinput flex-auto'
+                            className='radius dateinput flex-auto inputfield'
                         />
 
                         <input
@@ -77,11 +77,11 @@ function Currentdates() {
                             onChange={handleInputChange}
                             type="text"
                             placeholder='Breed' 
-                            className='breed dateinput flex-auto'
+                            className='breed dateinput flex-auto inputfield'
                         />
                         <button className="dateButton" type="button" onClick={handleFormSubmit}>Send</button>
                     </div>
-                    <div className='displayArea flex flex-row gap-1'>
+                    <div className='displayArea flex flex-row gap-1 flex-wrap'>
                         
                         <card className="displayCard flex flex-col flex-auto ">
                             <img src='../../public/assets/Puddle.png' className='object-contain md:object-scale-down pupimg' alt='petnamehere'></img>
