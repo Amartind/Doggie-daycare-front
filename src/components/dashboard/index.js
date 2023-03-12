@@ -7,7 +7,6 @@ export default function Dashboard() {
     <div className='mainBody flex flex-auto flex-col'>
         <h1 className="title flex justify-center">Welcome!</h1>
         <div className="flex justify-center flexME2 flex-auto flex-col">
-        
           <h3 className="flex justify-center flex-auto">If this is your first time here let me show you around!</h3>
           <p className='flex justify-center flex-auto'>To see events happening around you this weeked checkout the<Link className="bold" to="/currentplaydates">&nbsp;Local Meetups&nbsp;</Link>section</p>
           <p className='flex justify-center flex-auto'> <Link className="bold" to="/localpups">&nbsp;Local Pups&nbsp;</Link> is a great place to see the great doggie frinds in your area that your pup could meet</p>
