@@ -10,6 +10,7 @@ import Currentdates from './components/currentplaydates';
 import MyDoggies from './components/mydoggies';
 import Dashboard from './components/dashboard';
 import Hompage from './components/homepage';
+import Localpups from './components/localpups';
 
 
 
@@ -24,6 +25,7 @@ function App() {
       <Route path='/createaplaydate' element={<CreateADate/>}></Route>
       <Route path='/currentplaydates' element={<Currentdates/>}></Route>
       <Route path='/addapooch' element={<Addpooch/>}></Route>
+      <Route path='/localpups' element={<Localpups/>}></Route>
       <Route path='/mydoggies' element={<h1>My dogs</h1>}></Route>
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
