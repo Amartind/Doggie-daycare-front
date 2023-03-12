@@ -46,6 +46,7 @@ function Profile() {
               onChange={handleInputChange}
               type="text"
               placeholder="Full name"
+              className="inputfield"
           />
           <input
               value={username}
@@ -53,6 +54,7 @@ function Profile() {
               onChange={handleInputChange}
               type="text"
               placeholder="Username"
+              className="inputfield"
           />
           <input
               value={email}
@@ -60,6 +62,7 @@ function Profile() {
               onChange={handleInputChange}
               type="text"
               placeholder="Email"
+              className="inputfield"
           />
           <input
               value={password}
@@ -67,6 +70,7 @@ function Profile() {
               onChange={handleInputChange}
               type="password"
               placeholder="Password"
+              className="inputfield"
           />
           <input
               value={phonenumber}
@@ -74,6 +78,7 @@ function Profile() {
               onChange={handleInputChange}
               type="text"
               placeholder="Phonenumber"
+              className="inputfield"
           />
           <input
               value={address}
@@ -81,6 +86,7 @@ function Profile() {
               onChange={handleInputChange}
               type="text"
               placeholder="Address"
+              className="inputfield"
           />
           <button type="button" onClick={handleFormSubmit}>
             Submit

@@ -11,7 +11,7 @@ function Addpooch() {
     const [snipsnip, setSnipSnip] = useState(false);
     const [vaccinated, setVaccinated] = useState(false);
     const maleSelector = document.getElementById("male")
-    const femaleSelector = document.getElementById("female")
+    // const femaleSelector = document.getElementById("female")
   
     const handleInputChange = (e) => {
       // Getting the value and name of the input which triggered the change
@@ -51,8 +51,8 @@ function Addpooch() {
     };
   
     return (
-      <div className="container">
-        <p>Tell Us About Your Dog</p>
+      <div className="dogcontainer flex flex-col flex-auto">
+        <p className="flex justify-center text-lg">Tell Us About Your Dog</p>
         <form className="dogform grid p-2 grid-cols-2 grid-rows-6">
             <div className="grid gap-4 grid-cols-1 grid-rows-7">
                 <input
@@ -61,14 +61,19 @@ function Addpooch() {
                     onChange={handleInputChange}
                     type="text"
                     placeholder="Dog name"
+                    className="inputfield"
                 />
                 {/* TODO:select only 1 and change values based off what is selected */}
-                <div className="p-4">
-                
-                    <input value={doggender} type="checkbox.radio" id="male" name="male" onChange={handleInputChange} />
-                    <label htmlFor="male"> Male</label>
-                    <input value={doggender} type="checkbox.radio" id="female" name="female" onChange={handleInputChange} />
+                <div className="p-4 grid grid-cols-2">
+                    <div>
+                      <input value={doggender} type="checkbox" id="male" name="male" onChange={handleInputChange} />
+                      <label htmlFor="male"> Male</label>
+                    </div>
+                    <div>
+                    <input value={doggender} type="checkbox" id="female" name="female" onChange={handleInputChange} />
                     <label htmlFor="female"> Female</label>
+                    </div>
+                    
 
                 </div>
                 <input
@@ -77,6 +82,7 @@ function Addpooch() {
                     onChange={handleInputChange}
                     type="text"
                     placeholder="How old is your dog?"
+                    className="inputfield"
                 />
                 {/* TODO:assigned values */}
                 <input
@@ -85,6 +91,7 @@ function Addpooch() {
                     onChange={handleInputChange}
                     type="text"
                     placeholder="What is your dogs breed"
+                    className="inputfield"
                 />
                 {/* TODO: Combobox */}
                 <input
@@ -93,6 +100,7 @@ function Addpooch() {
                     onChange={handleInputChange}
                     type="text"
                     placeholder="How does your dog act"
+                    className="inputfield"
                 />
                 
                 <div className="grid grid-rows-1">
@@ -116,15 +124,16 @@ function Addpooch() {
 
                     />
                 </div>
+                <button type="button" onClick={handleFormSubmit} className="adddogbtn">
+            Submit
+          </button>
             </div>
             <div>
                 {/* cloudinary photo goes here */}
-                cloudinary photo goes here
+                <p>cloudinary photo goes here</p>
             </div>
-          <button type="button" onClick={handleFormSubmit}>
-            Submit
-          </button>
         </form>
+          
       </div>
     );
   }

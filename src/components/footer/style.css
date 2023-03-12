@@ -6,10 +6,11 @@
     display:flex;
     justify-content: space-around;
     height: 3vh;
-    background-color: aqua;
-    position: absolute;
+    background-color: #4FB477;
     bottom: 0;
-    width: 100%;
+    margin: 1vh;
+    padding: 1vh;
+   
 }
 
 .FooterLink{
@@ -19,6 +20,6 @@
 }
 
 .FooterLink:hover{
-    background-color: blue;
+    background-color: #2F6690;
     color:azure;
 }

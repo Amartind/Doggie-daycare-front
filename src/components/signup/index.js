@@ -72,46 +72,53 @@ function Signup() {
     <div className="container">
       <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
         <input
-          value={fullname}
-          name="fullname"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Full name"
+
+            value={fullname}
+            name="fullname"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="Full name"
+            className="inputfield"
         />
         <input
-          value={username}
-          name="username"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Username"
+            value={username}
+            name="username"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="Username"
+            className="inputfield"
         />
         <input
-          value={email}
-          name="email"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Email"
+            value={email}
+            name="email"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="Email"
+            className="inputfield"
         />
         <input
-          value={password}
-          name="password"
-          onChange={handleInputChange}
-          type="password"
-          placeholder="Password"
+            value={password}
+            name="password"
+            onChange={handleInputChange}
+            type="password"
+            placeholder="Password"
+            className="inputfield"
         />
         <input
-          value={phonenumber}
-          name="phonenumber"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Phonenumber"
+            value={phonenumber}
+            name="phonenumber"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="Phonenumber"
+            className="inputfield"
         />
         <input
-          value={address}
-          name="address"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Address"
+            value={address}
+            name="address"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="Address"
+            className="inputfield"
         />
         <button type="button" onClick={handleFormSubmit}>
           Submit
