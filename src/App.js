@@ -7,9 +7,11 @@ import Profile from './components/profile';
 import Addpooch from './components/addapooch';
 import CreateADate from './components/createadate';
 import Currentdates from './components/currentplaydates';
+import MyDoggies from './components/mydoggies';
 import Dashboard from './components/dashboard';
 import Hompage from './components/homepage';
 import Localpups from './components/localpups';
+
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
     <Link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/luxonauta/luxa@1.1/dist/expanded/luxa.css"/>
     <Link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/luxonauta/luxa@1.1/dist/compressed/luxa.css"/>
     <Footer/>
+
     </BrowserRouter>
   );
 }
