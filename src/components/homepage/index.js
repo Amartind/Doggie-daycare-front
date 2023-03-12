@@ -4,7 +4,7 @@ import DogBL from "./dogpfp1.PNG";
 import DogBM from "./parkplay2.PNG";
 import DogTL from "./parkplay.PNG";
 
-export default function Hompage() {
+export default function Homepage() {
     return (
       <div className="box">
         <div className="flex flex-wrap gap-5 justify-around flex-auto">
