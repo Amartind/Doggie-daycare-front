@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './style.css'
 
- 
+
 function Login() {
   // Here we set two state variables for firstName and lastName using `useState`
   const [username, setUserName] = useState('');
@@ -15,12 +15,37 @@ function Login() {
   };
 
   const handleFormSubmit = (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+
+    const owner = {
+      username,
+      password,
+    };
+
+    fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(owner)
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('Login successful!');
+          // perform any actions needed for successful login
+        } else {
+          console.error('Login failed!');
+          // perform any actions needed for failed login
+        }
+      })
+      .catch(error => {
+        console.error('Failed to send request:', error);
+      });
 
     setUserName('');
     setPassword('');
   };
+
 
   return (
     <div className="container">
@@ -48,6 +73,7 @@ function Login() {
     </div>
   );
 }
+
 
 
 export default Login

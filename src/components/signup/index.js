@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './style.css'
 
- 
+
 function Signup() {
   const [fullname, setFullName] = useState('');
   const [username, setUserName] = useState('');
@@ -14,37 +14,65 @@ function Signup() {
     // Getting the value and name of the input which triggered the change
     const { name, value } = e.target;
 
-    if (name === 'username'){
-        return setUserName(value)
-    } else if (name === 'password'){
-        return setPassword(value)
-    } else if (name === 'fullname'){
-        return setFullName(value)
-    } else if (name === 'email'){
-        return setEmail(value)
-    } else if (name === 'phonenumber'){
-        return setPhoneNumber(value)
-    } else if (name === 'address'){
-        return setAddress(value)
-    } 
+    if (name === 'username') {
+      return setUserName(value)
+    } else if (name === 'password') {
+      return setPassword(value)
+    } else if (name === 'fullname') {
+      return setFullName(value)
+    } else if (name === 'email') {
+      return setEmail(value)
+    } else if (name === 'phonenumber') {
+      return setPhoneNumber(value)
+    } else if (name === 'address') {
+      return setAddress(value)
+    }
   };
 
   const handleFormSubmit = (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
-    setUserName('');
-    setPassword('');
+    const newOwner = {
+      fullname,
+      username,
+      email,
+      password,
+      phonenumber,
+      address
+    };
+
+    fetch('/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newOwner)
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('Owner added to database!');
+        } else {
+          console.error('Failed to add owner to database!');
+        }
+      })
+      .catch(error => {
+        console.error('Failed to send request:', error);
+      });
+
     setFullName('');
+    setUserName('');
     setEmail('');
+    setPassword('');
     setPhoneNumber('');
     setAddress('');
   };
+
 
   return (
     <div className="container">
       <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
         <input
+
             value={fullname}
             name="fullname"
             onChange={handleInputChange}
