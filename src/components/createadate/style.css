@@ -1,22 +1,35 @@
-
+* {
+    font-family: 'Berkshire Swash', cursive;
+    max-height:100vh;
+    max-width: 100vw ;
+ 
+}
 .container{
-    justify-self: center;
+    border: 5px solid rgb(100, 223, 96);
+    max-width: 40%;
+    max-height: 60rem;
+}
+
+.title{
+    max-height: fit-content;
 }
 
 .dateform{
-    border: 5px solid red;
+    border: 5px solid rgb(16, 14, 117);
     display: flex;
+    
     justify-content: space-evenly;
     padding: 5px;
     max-width: 80%;
 }
 .dateinput{
-    padding: 3%;
+    padding: 1px;
 }
 .datebutton{
     border: 2px solid red;
-    max-height: 5%;
+    
 }
 .datefield{
-    border: 1px round grey;
+    border: 2px solid rgb(70, 70, 70);
+    padding: 5px;
 }

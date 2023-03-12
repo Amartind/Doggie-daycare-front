@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './style.css'
+const { getAllPets, getAllOwners, isValidToken, login, signup, addapet, deletepet, editOwner } = require("../../utils/API.js");
 
 
 function Login() {
@@ -22,13 +23,7 @@ function Login() {
       password,
     };
 
-    fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(owner)
-    })
+    login(username)
       .then(response => {
         if (response.ok) {
           console.log('Login successful!');
@@ -44,33 +39,33 @@ function Login() {
 
     setUserName('');
     setPassword('');
-    return (
-      <div className="container">
-        <form className="loginform grid gap-4 grid-cols-1 grid-rows-2">
-          <input
-            value={username}
-            name="username"
-            onChange={handleInputChange}
-            type="text"
-            placeholder="Username"
-          />
-          <input
-            value={password}
-            name="password"
-            onChange={handleInputChange}
-            type="password"
-            placeholder="Password"
-          />
-          <button type="button" onClick={handleFormSubmit}>
-            Submit
-          </button>
-        </form>
-      </div>
-    );
   };
 
 };
 
+return (
+  <div className="container">
+    <form className="loginform grid gap-4 grid-cols-1 grid-rows-2">
+      <input
+        value={username}
+        name="username"
+        onChange={handleInputChange}
+        type="text"
+        placeholder="Username"
+      />
+      <input
+        value={password}
+        name="password"
+        onChange={handleInputChange}
+        type="password"
+        placeholder="Password"
+      />
+      <button type="button" onClick={handleFormSubmit}>
+        Submit
+      </button>
+    </form>
+  </div>
+);
 
 
 
