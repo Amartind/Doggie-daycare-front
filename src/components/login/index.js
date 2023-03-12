@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './style.css'
 
- 
+
 function Login() {
   // Here we set two state variables for firstName and lastName using `useState`
   const [username, setUserName] = useState('');
@@ -15,37 +15,63 @@ function Login() {
   };
 
   const handleFormSubmit = (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+
+    const owner = {
+      username,
+      password,
+    };
+
+    fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(owner)
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('Login successful!');
+          // perform any actions needed for successful login
+        } else {
+          console.error('Login failed!');
+          // perform any actions needed for failed login
+        }
+      })
+      .catch(error => {
+        console.error('Failed to send request:', error);
+      });
 
     setUserName('');
     setPassword('');
   };
 
-  return (
-    <div className="container">
-      <form className="loginform grid gap-4 grid-cols-1 grid-rows-2">
-        <input
-          value={username}
-          name="username"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Username"
-        />
-        <input
-          value={password}
-          name="password"
-          onChange={handleInputChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button type="button" onClick={handleFormSubmit}>
-          Submit
-        </button>
-      </form>
-    </div>
-  );
-}
+};
+
+return (
+  <div className="container">
+    <form className="loginform grid gap-4 grid-cols-1 grid-rows-2">
+      <input
+        value={username}
+        name="username"
+        onChange={handleInputChange}
+        type="text"
+        placeholder="Username"
+      />
+      <input
+        value={password}
+        name="password"
+        onChange={handleInputChange}
+        type="password"
+        placeholder="Password"
+      />
+      <button type="button" onClick={handleFormSubmit}>
+        Submit
+      </button>
+    </form>
+  </div>
+);
+
 
 
 export default Login
