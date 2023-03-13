@@ -26,34 +26,33 @@ function Profile(props) {
       }
       })
     }
-    useEffect(() => {
-      fetchUser();
-    }, [props.userId,params.id]);
     const handleInputChange = (e) => {
       // Getting the value and name of the input which triggered the change
       const { name, value } = e.target;
-  
+      
       if (name === 'username'){
-          return setUserName(value)
+        return setUserName(value)
       } else if (name === 'password'){
-          return setPassword(value)
+        return setPassword(value)
       } else if (name === 'fullname'){
-          return setFullName(value)
+        return setFullName(value)
       } else if (name === 'email'){
-          return setEmail(value)
+        return setEmail(value)
       } else if (name === 'phonenumber'){
-          return setPhoneNumber(value)
+        return setPhoneNumber(value)
       } else if (name === 'address'){
-          return setAddress(value)
+        return setAddress(value)
       } 
     };
-  
+    
     const handleFormSubmit = (e) => {
       // Preventing the default behavior of the form submit (which is to refresh the page)
       e.preventDefault();
-  
+    };  
       
-    };
+    useEffect(() => {
+      fetchUser();
+    }, [props.userId,params.id]);
     
     return (
       <div className="container">
