@@ -9,11 +9,9 @@ function Signup() {
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
-
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
     const { name, value } = e.target;
-
     if (name === 'username') {
       return setUserName(value)
     } else if (name === 'password') {
@@ -28,10 +26,8 @@ function Signup() {
       return setAddress(value)
     }
   };
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
     const newOwner = {
       name,
       username,
@@ -40,8 +36,6 @@ function Signup() {
       phone,
       address
     };
-    // name: JoeBoe
-    // phone: 1234567890
 
     signup(newOwner)
       .then(response => {
@@ -62,8 +56,6 @@ function Signup() {
     setPhone('');
     setAddress('');
   };
-
-
   return (
     <div className="container">
       <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
@@ -123,6 +115,3 @@ function Signup() {
     </div>
   );
 }
-
-
-export default Signup
