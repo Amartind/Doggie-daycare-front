@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './style.css'
 import { signup } from "../../utils/API";
 
+
 function Signup() {
   const [name, setName] = useState('');
   const [username, setUserName] = useState('');
