@@ -12,7 +12,7 @@ const getAllOwners = function (id) {
 const isValidToken = function (token) {
     return fetch(`${URL_PREFIX}/api/owners/isValidToken`, {
         headers: {
-            Authorization: `Bearer ${token}`,
+            "authorization": `Bearer ${token}`,
         },
     }).then((res) => res.json());
 }
@@ -46,7 +46,7 @@ const addapet = function (petObj, token) {
         body: JSON.stringify(petObj),
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            "authorization": `Bearer ${token}`,
         },
     }).then((res) => res.json());
 }
@@ -55,7 +55,7 @@ const deletepet = function (petId, token) {
     return fetch(`${URL_PREFIX}/api/pets/${petId}`, {
         method: "DELETE",
         headers: {
-            Authorization: `Bearer ${token}`,
+            "authorization": `Bearer ${token}`,
         },
     }).then((res) => res.json());
 }
@@ -66,7 +66,7 @@ const editOwner = function (ownerObj, ownerId, token) {
         body: JSON.stringify(ownerObj),
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            "authorization": `Bearer ${token}`,
         },
     }).then((res) => res.json());
 }

@@ -3,7 +3,7 @@ import './style.css'
 
 function Localpups() {
   return (
-    <div>index</div>
+    <div>Local Pups!!!</div>
   )
 }
 
