@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import './style.css'
-
+import { signup } from "../../utils/API";
 
 function Signup() {
-  const [fullname, setFullName] = useState('');
+  const [name, setName] = useState('');
   const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [phonenumber, setPhoneNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
 
   const handleInputChange = (e) => {
@@ -18,12 +18,12 @@ function Signup() {
       return setUserName(value)
     } else if (name === 'password') {
       return setPassword(value)
-    } else if (name === 'fullname') {
-      return setFullName(value)
+    } else if (name === 'name') {
+      return setName(value)
     } else if (name === 'email') {
       return setEmail(value)
-    } else if (name === 'phonenumber') {
-      return setPhoneNumber(value)
+    } else if (name === 'phone') {
+      return setPhone(value)
     } else if (name === 'address') {
       return setAddress(value)
     }
@@ -33,21 +33,17 @@ function Signup() {
     e.preventDefault();
 
     const newOwner = {
-      fullname,
+      name,
       username,
       email,
       password,
-      phonenumber,
+      phone,
       address
     };
+    // name: JoeBoe
+    // phone: 1234567890
 
-    fetch('/api/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newOwner)
-    })
+    signup(newOwner)
       .then(response => {
         if (response.ok) {
           console.log('Owner added to database!');
@@ -59,11 +55,11 @@ function Signup() {
         console.error('Failed to send request:', error);
       });
 
-    setFullName('');
+    setName('');
     setUserName('');
     setEmail('');
     setPassword('');
-    setPhoneNumber('');
+    setPhone('');
     setAddress('');
   };
 
@@ -73,52 +69,52 @@ function Signup() {
       <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
         <input
 
-            value={fullname}
-            name="fullname"
-            onChange={handleInputChange}
-            type="text"
-            placeholder="Full name"
-            className="inputfield"
+          value={name}
+          name="name"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="Full name"
+          className="inputfield"
         />
         <input
-            value={username}
-            name="username"
-            onChange={handleInputChange}
-            type="text"
-            placeholder="Username"
-            className="inputfield"
+          value={username}
+          name="username"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="Username"
+          className="inputfield"
         />
         <input
-            value={email}
-            name="email"
-            onChange={handleInputChange}
-            type="text"
-            placeholder="Email"
-            className="inputfield"
+          value={email}
+          name="email"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="Email"
+          className="inputfield"
         />
         <input
-            value={password}
-            name="password"
-            onChange={handleInputChange}
-            type="password"
-            placeholder="Password"
-            className="inputfield"
+          value={password}
+          name="password"
+          onChange={handleInputChange}
+          type="password"
+          placeholder="Password"
+          className="inputfield"
         />
         <input
-            value={phonenumber}
-            name="phonenumber"
-            onChange={handleInputChange}
-            type="text"
-            placeholder="Phonenumber"
-            className="inputfield"
+          value={phone}
+          name="phone"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="Phone Number"
+          className="inputfield"
         />
         <input
-            value={address}
-            name="address"
-            onChange={handleInputChange}
-            type="text"
-            placeholder="Address"
-            className="inputfield"
+          value={address}
+          name="address"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="Address"
+          className="inputfield"
         />
         <button type="button" onClick={handleFormSubmit}>
           Submit
