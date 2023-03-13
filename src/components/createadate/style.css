@@ -6,7 +6,7 @@
 }
 .container{
     border: 5px solid rgb(100, 223, 96);
-    width: 50%;
+    width: 50%; 
     margin-left: auto;
     margin-right: auto;
     max-height: 60rem;
@@ -17,18 +17,23 @@
 }
 
 .dateform{
-    border: 5px solid rgb(16, 14, 117);
+    /* border: 5px solid rgb(16, 14, 117); */
     display: flex;
     justify-content: space-evenly;
     padding: 5px;
-    max-width: 80%;
+    min-width: 80%;
 }
 .dateinput{
     padding: 1px;
 }
 .datebutton{
     border: 2px solid red;
-    
+    max-width: fit-content;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display:inline-block;
+    text-align: center
 }
 .datefield{
     border: 2px solid rgb(70, 70, 70);

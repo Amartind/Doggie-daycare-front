@@ -41,10 +41,10 @@ function Signup() {
     signup(newOwner)
       .then(response => {
         if (response.ok) {
-          console.log('Owner added to database!');
-        } else {
-          console.error('Failed to add owner to database!');
-        }
+          console.log('Owner added to database!');}
+        // } else {
+        //   console.error('Failed to add owner to database!');
+        // }
       })
       .catch(error => {
         console.error('Failed to send request:', error);
