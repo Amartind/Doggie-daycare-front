@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './style.css'
 import { signup } from "../../utils/API";
+
 function Signup() {
   const [name, setName] = useState('');
   const [username, setUserName] = useState('');
@@ -35,6 +36,7 @@ function Signup() {
       phone,
       address
     };
+
     signup(newOwner)
       .then(response => {
         if (response.ok) {
@@ -46,6 +48,7 @@ function Signup() {
       .catch(error => {
         console.error('Failed to send request:', error);
       });
+
     setName('');
     setUserName('');
     setEmail('');
@@ -57,6 +60,7 @@ function Signup() {
     <div className="container">
       <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
         <input
+
           value={name}
           name="name"
           onChange={handleInputChange}

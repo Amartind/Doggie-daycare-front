@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import './style.css'
+import { addapet } from "../../utils/API";
 
 
 function Addpooch() {
+
     const [dogname, setDogName] = useState('');
     const [doggender, setDogGender] = useState('');
     const [dogage, setDogAge] = useState('');
@@ -37,7 +39,29 @@ function Addpooch() {
             return setVaccinated(false)
         } 
         else return setVaccinated(true)
+
       }
+      else return setSnipSnip(true)
+    } else if (name === 'vaccinated') {
+      if (vaccinated) {
+        return setVaccinated(false)
+      }
+      else return setVaccinated(true)
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    e.preventDefault();
+
+    const addPet = {
+      name,
+      gender,
+      age,
+      breed,
+      personality,
+      spayed_neutered,
+      vaccinated,
     };
   
     const handleFormSubmit = (e) => {
@@ -119,16 +143,17 @@ function Addpooch() {
                 <button type="button" onClick={handleFormSubmit} className="adddogbtn">
             Submit
           </button>
-            </div>
-            <div>
-                {/* cloudinary photo goes here */}
-                <p>cloudinary photo goes here</p>
-            </div>
-        </form>
-          
-      </div>
-    );
-  }
-  
-  
-  export default Addpooch
+
+        </div>
+        <div>
+          {/* cloudinary photo goes here */}
+          <p>cloudinary photo goes here</p>
+        </div>
+      </form>
+
+    </div>
+  );
+}
+
+
+export default Addpooch
