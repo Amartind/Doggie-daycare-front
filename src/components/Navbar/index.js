@@ -17,7 +17,8 @@ const Navbar = () => {
                      <Link to="/" className="navlink flex-auto">Home</Link>
      
                      <div className="signedin justify-self-end flex-auto">
-                         <Link to="/currentplaydates" className="p-4 navlink flex-auto">Dogs in your area</Link>
+                         <Link to="/localpups" className="p-4 navlink flex-auto">Local Pups</Link>
+                         <Link to="/currentplaydates" className="p-4 navlink flex-auto">Local Meetups</Link>
                          <Link to="/createaplaydate" className="p-4 navlink flex-auto">Make a meet up</Link>
                          <div className="dropdown">
                             <button className="dropbtn">Profile</button>
