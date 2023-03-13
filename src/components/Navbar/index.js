@@ -20,7 +20,7 @@ const Navbar = (props) => {
                             <button className="dropbtn">Profile</button>
                             <div className="dropdown-content ">
                               <div className="grid grid-rows-4">
-                              <Link to={`/profile/{props.userId}`}  className="dropdownlink p-4 navlink flex-auto" >Edit Profile</Link>
+                              <Link to={`/profile/${props.userId}`}  className="dropdownlink p-4 navlink flex-auto" >Edit Profile</Link>
                               <Link to="/mydoggies" className="dropdownlink p-4 navlink flex-auto">My Dogs</Link>
                               <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto" >Add Dog</Link>
                               <Link to="/" className="dropdownlink p-4 navlink flex-auto">Logout</Link>
@@ -34,12 +34,7 @@ const Navbar = (props) => {
                         <div className="notsignedin justify-self-end flex-auto">
                                 <Link to="/login" className="p-4 navlink flex-auto">Login</Link>
                                 <Link to="/signup" className="p-4 navlink flex-auto">Sign-up</Link>
-                        </div>
-    
-    
-                                
-    
-                            
+                        </div>      
                      }
                      
                  </div>
