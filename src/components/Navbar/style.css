@@ -5,7 +5,9 @@
     margin-left: 5vw;
     margin-right: 5vw;
     padding: 2px;
-    
+    @media screen {max-width: 1107px
+      
+    }
    
 }
 .navlink:hover{
@@ -63,4 +65,16 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color:#81ecec;
+}
+
+.logo{
+  display: flex;
+  margin-left: 15%;
+  width: 25%;
+}
+
+.horizontal{
+  /* display: inline; */
+  padding-top: 1.75%;
+  padding-left: 1.75%;
 }

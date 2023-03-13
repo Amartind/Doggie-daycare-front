@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import './style.css'
 import { Link } from 'react-router-dom';
+import API from "../../utils/API"
 
 export default function Dashboard() {
+  const [loggedIN, setloggedIN] = useState([])
+  // useEffect(()=>{
+  //   API
+  // })
   return (
     <div className='mainBody flex flex-auto flex-col'>
         <h1 className="title flex justify-center">Welcome!</h1>

@@ -39,10 +39,11 @@ function CreateADate() {
 
     return (
         <div className="container flex flex-col justify-center justify-self-center rounded flex-auto">
-            <p className='flex justify-center flex-auto'>Make a Play Date</p>
-            <div className='flex justify-center flex-auto'>
-                <form className=" dateform grid p-4 grid-cols-1 grid-rows-5 rounded-md">
-                    <div className=" dateinput grid p-4 grid-cols-1 grid-rows-5">
+            <p className='flex justify-center text-lg'>Make a Play Date</p>
+            <br/>
+            {/* <div className='flex justify-center flex-auto'> */}
+                <form className="grid centerMe p-4 grid-cols-1 grid-rows-5 rounded-md">
+                    <div className="grid gap-4 grid grid-cols-1 grid-rows-5">
                         <input
                             value={eventTitle}
                             name="eventTitle"
@@ -89,7 +90,7 @@ function CreateADate() {
                             placeholder='Date Notes'
                             className='datefield py-8 inputfield'
                         />
-
+                    <br/>
                         <button className="datebutton rounded order-last" type="button" onClick={handleFormSubmit}>Send</button>
                     </div>
                 </form>
@@ -97,7 +98,7 @@ function CreateADate() {
 
 
 
-        </div>
+        // </div>
     )
 }
 
