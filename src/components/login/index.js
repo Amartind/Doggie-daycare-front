@@ -19,17 +19,18 @@ function Login() {
     e.preventDefault();
 
     const owner = {
-      username,
-      password,
+      username: username,
+      password: password
     };
 
-    login(username)
-      .then(response => {
+    login(owner)
+      .then((response,err) => {
         if (response.ok) {
           console.log('Login successful!');
           // perform any actions needed for successful login
         } else {
-          console.error('Login failed!');
+          alert("Invalid Credentials")
+          console.error('Login failed!', err);
           // perform any actions needed for failed login
         }
       })
@@ -51,6 +52,7 @@ function Login() {
           onChange={handleInputChange}
           type="text"
           placeholder="Username"
+          className="inputfield"
         />
         <input
           value={password}
@@ -58,6 +60,7 @@ function Login() {
           onChange={handleInputChange}
           type="password"
           placeholder="Password"
+          className="inputfield"
         />
         <button type="button" onClick={handleFormSubmit}>
           Submit
