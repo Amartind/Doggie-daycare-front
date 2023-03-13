@@ -3,7 +3,7 @@ import './style.css'
 import { signup } from "../../utils/API";
 
 
-function Signup() {
+function Signup(props) {
   const [name, setName] = useState('');
   const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -31,31 +31,43 @@ function Signup() {
     e.preventDefault();
     const newOwner = {
       name,
-      username,
       email,
-      password,
       phone,
+      username,
+      password,
       address
     };
 
     signup(newOwner)
       .then(response => {
-        if (response.ok) {
+        console.log(response);
+        if (response.token) {
           console.log('Owner added to database!');
+          props.setToken(response.token);
+          props.setIsLoggedIn(true);
+          props.setUserId(response.user.id)
         } else {
           console.error('Failed to add owner to database!');
+          localStorage.setItem("token",response.token)
+          setName('');
+          setUserName('');
+          setEmail('');
+          setPassword('');
+          setPhone('');
+          setAddress('')
         }
       })
       .catch(error => {
         console.error('Failed to send request:', error);
       });
-
-    setName('');
-    setUserName('');
-    setEmail('');
-    setPassword('');
-    setPhone('');
-    setAddress('');
+      
+      setName('');
+      setUserName('');
+      setEmail('');
+      setPassword('');
+      setPhone('');
+      setAddress('');
+  
   };
   return (
     <div className="container">
