@@ -10,7 +10,7 @@ function Addpooch() {
     const [dogpersonality, setDogPersonality] = useState('');
     const [snipsnip, setSnipSnip] = useState(false);
     const [vaccinated, setVaccinated] = useState(false);
-    const maleSelector = document.getElementById("male")
+ 
     // const femaleSelector = document.getElementById("female")
   
     const handleInputChange = (e) => {
@@ -20,10 +20,7 @@ function Addpooch() {
       if (name === 'dogname'){
           return setDogName(value)
       } else if (name === 'doggender'){
-        if (maleSelector){
-            console.log("male")
-          return setDogGender("Male")
-        } else return setDogGender("Female")
+        return setDogGender(value)
       } else if (name === 'dogage'){
           return setDogAge(value)
       } else if (name === 'dogbreed'){
@@ -63,19 +60,14 @@ function Addpooch() {
                     placeholder="Dog name"
                     className="inputfield"
                 />
-                {/* TODO:select only 1 and change values based off what is selected */}
-                <div className="p-4 grid grid-cols-2">
-                    <div>
-                      <input value={doggender} type="checkbox" id="male" name="male" onChange={handleInputChange} />
-                      <label htmlFor="male"> Male</label>
-                    </div>
-                    <div>
-                    <input value={doggender} type="checkbox" id="female" name="female" onChange={handleInputChange} />
-                    <label htmlFor="female"> Female</label>
-                    </div>
-                    
-
-                </div>
+                <input 
+                    value={doggender} 
+                    name="doggender" 
+                    onChange={handleInputChange}
+                    type="text" 
+                    placeholder="Is your dog Male or Female?"
+                    className="inputfield"
+                />
                 <input
                     value={dogage}
                     name="dogage"
