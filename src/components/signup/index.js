@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './style.css'
 import { signup } from "../../utils/API";
+import { login } from "../../utils/API";
 
 function Signup() {
   const [name, setName] = useState('');
@@ -40,8 +41,7 @@ function Signup() {
       phone,
       address
     };
-    // name: JoeBoe
-    // phone: 1234567890
+
 
     signup(newOwner)
       .then(response => {
