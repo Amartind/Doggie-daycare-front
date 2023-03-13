@@ -1,15 +1,34 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
+import { useParams } from "react-router-dom";
+import {getAllOwners} from "../../utils/API";
 import './style.css'
 
 
-function Profile() {
+function Profile(props) {
+    const params = useParams();
+    const [user, setUser] = useState({});
+    const [isMyPage, setIsMyPage] = useState(false);
     const [fullname, setFullName] = useState('');
     const [username, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [phonenumber, setPhoneNumber] = useState('');
     const [address, setAddress] = useState('');
-  
+    const fetchUser = ()=>{
+      getAllOwners(params.id).then((data)=>{
+        setUser(data);
+        console.log(data)
+        console.log(props.userId);
+      if (props.userId == params.id) {
+        setIsMyPage(true);
+      } else {
+        setIsMyPage(false);
+      }
+      })
+    }
+    useEffect(() => {
+      fetchUser();
+    }, [props.userId,params.id]);
     const handleInputChange = (e) => {
       // Getting the value and name of the input which triggered the change
       const { name, value } = e.target;
@@ -35,7 +54,7 @@ function Profile() {
   
       
     };
-  
+    
     return (
       <div className="container">
         <p>Welcome <fullname/></p>
@@ -45,7 +64,7 @@ function Profile() {
               name="fullname"
               onChange={handleInputChange}
               type="text"
-              placeholder="Full name"
+              placeholder={user.name}
               className="inputfield"
           />
           <input
@@ -53,7 +72,7 @@ function Profile() {
               name="username"
               onChange={handleInputChange}
               type="text"
-              placeholder="Username"
+              placeholder={user.username}
               className="inputfield"
           />
           <input
@@ -61,7 +80,7 @@ function Profile() {
               name="email"
               onChange={handleInputChange}
               type="text"
-              placeholder="Email"
+              placeholder={user.email}
               className="inputfield"
           />
           <input
@@ -69,7 +88,7 @@ function Profile() {
               name="password"
               onChange={handleInputChange}
               type="password"
-              placeholder="Password"
+              placeholder={user.password}
               className="inputfield"
           />
           <input
@@ -77,7 +96,7 @@ function Profile() {
               name="phonenumber"
               onChange={handleInputChange}
               type="text"
-              placeholder="Phonenumber"
+              placeholder={user.phonenumber}
               className="inputfield"
           />
           <input
@@ -85,7 +104,7 @@ function Profile() {
               name="address"
               onChange={handleInputChange}
               type="text"
-              placeholder="Address"
+              placeholder={user.address}
               className="inputfield"
           />
           <button type="button" onClick={handleFormSubmit}>
