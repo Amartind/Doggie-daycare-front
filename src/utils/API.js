@@ -17,7 +17,7 @@ const getAllMeetupsRadius = function () {
 
 }
 
-const makeAMeetup = function () {
+const makeAMeetup = function (meetupObj, token) {
     return fetch(`${URL_PREFIX}/api/meetups`, {
         method: "POST",
         body: JSON.stringify(meetupObj),
@@ -28,8 +28,8 @@ const makeAMeetup = function () {
     }).then((res) => res.json());
 }
 
-const editaMeetup = function () {
-    return fetch(`${URL_PREFIX}/api/meetups/${id}`, {
+const editaMeetup = function (meetupObj, meetupid, token) {
+    return fetch(`${URL_PREFIX}/api/meetups/${meetupid}`, {
         method: "PUT",
         body: JSON.stringify(meetupObj),
         headers: {
@@ -39,8 +39,8 @@ const editaMeetup = function () {
     }).then((res) => res.json());
 }
 
-const deleteAMeetup = function () {
-    return fetch(`${URL_PREFIX}/api/meetups/${id}`, {
+const deleteAMeetup = function (meetupid,token) {
+    return fetch(`${URL_PREFIX}/api/meetups/${meetupid}`, {
         method: "DELETE",
         headers: {
             "authorization": `Bearer ${token}`,
