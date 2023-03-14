@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom'
 import API from "../../utils/API";
 import './style.css'
 import { useParams } from "react-router-dom";
-import LOGO from "./LogoDogs.png"
+import LOGO from "./LogoDogs.png";
+const { isValidToken} = require("../../utils/API.js");
 
 const Navbar = (props) => {
     const params = useParams();
     console.log(params)
-    const [Loggedin, setLoggedin] = useState({})
+    
+    
+    
     function hello() {
         props.setIsLoggedIn(false);
     }
@@ -21,7 +24,7 @@ const Navbar = (props) => {
                 {/* <h2 className="navlink flex-auto">Welcome {user.name}</h2> */}
                 <Link to="/" className="navlink p-2 flex-auto horizontal up">Home</Link>
 
-                {props.isLoggedIn ? <div className="signedin justify-self-end flex-auto">
+                {props.isLoggedin ? <div className="signedin justify-self-end flex-auto">
                     <Link to="/localpups" className="p-4 navlink flex-auto">Local Pups</Link>
                     <Link to="/currentplaydates" className="p-4 navlink flex-auto">Local Meetups</Link>
                     <Link to="/createaplaydate" className="p-4 navlink flex-auto">Make a meet up</Link>
