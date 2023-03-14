@@ -9,6 +9,46 @@ const getAllOwners = function (id) {
     return fetch(`${URL_PREFIX}/api/owners/${id}`).then((res) => res.json());
 }
 
+const getAllMeetups = function () {
+    return fetch(`${URL_PREFIX}/api/meetups`).then((res) => res.json());
+}
+
+const getAllMeetupsRadius = function () {
+
+}
+
+const makeAMeetup = function () {
+    return fetch(`${URL_PREFIX}/api/meetups`, {
+        method: "POST",
+        body: JSON.stringify(meetupObj),
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`,
+        },
+    }).then((res) => res.json());
+}
+
+const editaMeetup = function () {
+    return fetch(`${URL_PREFIX}/api/meetups/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(meetupObj),
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${token}`,
+        },
+    }).then((res) => res.json());
+}
+
+const deleteAMeetup = function () {
+    return fetch(`${URL_PREFIX}/api/meetups/${id}`, {
+        method: "DELETE",
+        headers: {
+            "authorization": `Bearer ${token}`,
+        },
+    }).then((res) => res.json());
+}
+
+
 const isValidToken = function (token) {
     return fetch(`${URL_PREFIX}/api/owners/isValidToken`, {
         headers: {
@@ -76,5 +116,9 @@ module.exports = {
     signup,
     addapet,
     deletepet,
-    editOwner
+    editOwner,
+    getAllMeetups,
+    makeAMeetup,
+    editaMeetup,
+    deleteAMeetup
 }
