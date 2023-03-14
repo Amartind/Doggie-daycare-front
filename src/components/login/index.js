@@ -3,7 +3,7 @@ import './style.css'
 const { getAllPets, getAllOwners, isValidToken, login, signup, addapet, deletepet, editOwner } = require("../../utils/API.js");
 
 
-function Login() {
+function Login(props) {
   // Here we set two state variables for firstName and lastName using `useState`
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
@@ -24,22 +24,30 @@ function Login() {
     };
 
     login(owner)
-      .then((response, err) => {
-        if (response.ok) {
+
+      .then((response) => {
+        if (response.token) {
+
           console.log('Login successful!');
+          props.setToken(response.token);
+          props.setIsLoggedIn(true);
+          props.setUserId(response.user.id)
+          localStorage.setItem("token",response.token)
+          setUserName('');
+          setPassword('');
           // perform any actions needed for successful login
         } else {
           alert("Invalid Credentials")
-          console.error('Login failed!', err);
+          console.error('Login failed!');
+          setUserName('');
+          setPassword('');
           // perform any actions needed for failed login
         }
       })
       .catch(error => {
         console.error('Failed to send request:', error);
       });
-
-    setUserName('');
-    setPassword('');
+    
   };
 
 
