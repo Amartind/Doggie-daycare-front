@@ -47,6 +47,7 @@ function Signup(props) {
           props.setToken(response.token);
           props.setIsLoggedIn(true);
           props.setUserId(response.user.id)
+          navigate("/dashboard");
         } else {
           console.error('Failed to add owner to database!');
           localStorage.setItem("token", response.token)
