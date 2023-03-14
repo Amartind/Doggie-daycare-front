@@ -10,7 +10,9 @@ const Navbar = (props) => {
     const params = useParams();
     console.log(params)
     const [Loggedin, setLoggedin] = useState({})
-
+    function hello(){
+        props.setIsLoggedIn(false);
+    }
         return (
     
              <div >
@@ -31,7 +33,7 @@ const Navbar = (props) => {
                               <Link to={`/profile/${props.userId}`}  className="dropdownlink p-4 navlink flex-auto" >Edit Profile</Link>
                               <Link to="/mydoggies" className="dropdownlink p-4 navlink flex-auto">My Dogs</Link>
                               <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto" >Add Dog</Link>
-                              <Link to="/" className="dropdownlink p-4 navlink flex-auto">Logout</Link>
+                              <Link to="/" className="dropdownlink p-4 navlink flex-auto" onClick={hello}>Logout</Link>
 
                               </div>
                             </div>
