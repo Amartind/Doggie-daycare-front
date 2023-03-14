@@ -15,7 +15,7 @@ function MyDoggies(props) {
         <div className="mydoggies-container">
             <p>My Doggies</p>
             <div className="dog-container">
-                {dogs.map((dog) => (
+                {dogs && dogs.map((dog) => (
                     <div className="dog" key={dog.id}>
                         <div className="dog-info">
                             <p>Dog Name: {dog.name}</p>
@@ -36,3 +36,5 @@ function MyDoggies(props) {
 
 
 export default MyDoggies;
+
+
