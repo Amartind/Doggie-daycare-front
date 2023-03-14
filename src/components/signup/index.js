@@ -1,7 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import './style.css'
 import { signup } from "../../utils/API";
-
 
 function Signup(props) {
   const [name, setName] = useState('');
@@ -10,6 +10,7 @@ function Signup(props) {
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
+  const navigate = useNavigate();
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
     const { name, value } = e.target;
@@ -46,6 +47,7 @@ function Signup(props) {
           props.setToken(response.token);
           props.setIsLoggedIn(true);
           props.setUserId(response.user.id)
+          navigate("/dashboard");
         } else {
           console.error('Failed to add owner to database!');
           localStorage.setItem("token",response.token)
@@ -121,7 +123,7 @@ function Signup(props) {
           placeholder="Address"
           className="inputfield"
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <button className="datebutton rounded" type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>
