@@ -24,8 +24,10 @@ function Login(props) {
     };
 
     login(owner)
+
       .then((response) => {
         if (response.token) {
+
           console.log('Login successful!');
           props.setToken(response.token);
           props.setIsLoggedIn(true);
