@@ -2,6 +2,7 @@ import React from "react";
 import './style.css'
 import DogBL from "./dogpfp1.PNG";
 import DogBM from "./parkplay2.PNG";
+import DogBR from "./dogpfp5.PNG";
 import DogTL from "./parkplay.PNG";
 
 export default function Homepage() {
@@ -16,7 +17,7 @@ export default function Homepage() {
         <div className="flex flex-wrap justify-around flex-auto">
           <img className="bottomimage md:object-scale-down flex-auto" src={DogBL} alt="Cute dogs playing"/>
           <img className="bottomimage md:object-scale-down flex-auto" src={DogBM} alt="Another group of cute dogs playing"/>
-        
+          <img className="bottomimage md:object-scale-down flex-auto" src={DogBR} alt="Another group of cute dogs playing"/>
         </div>
       </div>
     )

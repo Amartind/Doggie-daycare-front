@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Footer from './components/footer';
 import Login from './components/login';
@@ -11,26 +11,50 @@ import MyDoggies from './components/mydoggies';
 import Dashboard from './components/dashboard';
 import Homepage from './components/homepage';
 import Localpups from './components/localpups';
-
-
+import React,{useState,useEffect} from "react";
+const { isValidToken} = require("./utils/API.js");
 
 
 function App() {
-  // const user = await fetch(localhost/api/users/5)
+  const [token, setToken] = useState("");
+  const [userId, setUserId] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  useEffect(()=>{
+    const savedToken = localStorage.getItem("token");
+    console.log(savedToken)
+    if(savedToken){
+      isValidToken(savedToken).then(tokenData=>{
+        if(tokenData.isValid){
+          setToken(savedToken);
+          setUserId(tokenData.user.id)
+          setIsLoggedIn(true)
+        } else {
+          localStorage.removeItem("token")
+        }
+      })
+    }
+  },[])
+
+  const logout = ()=>{
+    setToken('');
+    setUserId(0);
+    setIsLoggedIn(false);
+    localStorage.removeItem("token")
+  }
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} userId={userId} logout={logout}/>
       <Routes>
-        <Route path='/' element={<Homepage />}></Route>
-        <Route path='/dashboard' element={<Dashboard />}></Route>
-        <Route path='/createaplaydate' element={<CreateADate />}></Route>
+        <Route path='/' element={<Homepage isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
+        <Route path='/dashboard' element={<Dashboard isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
+        <Route path='/createaplaydate' element={<CreateADate isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
         <Route path='/currentplaydates' element={<Currentdates />}></Route>
-        <Route path='/addapooch' element={<Addpooch />}></Route>
+        <Route path='/addapooch' element={<Addpooch isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
         <Route path='/localpups' element={<Localpups />}></Route>
-        <Route path='/mydoggies' element={<MyDoggies />}></Route>
-        <Route path='/profile' element={<Profile />}></Route>
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='/signup' element={<Signup />}></Route>
+        <Route path='/mydoggies' element={<MyDoggies isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
+        <Route path='/profile' element={<Profile token={token} userId={userId}/>}></Route>
+        <Route path='/login' element={<Login setToken={setToken} setUserId={setUserId} setIsLoggedIn={setIsLoggedIn} />}></Route>
+        <Route path='/signup' element={<Signup setToken={setToken} setUserId={setUserId} setIsLoggedIn={setIsLoggedIn} />}></Route>
         <Route path='*' element={<Homepage />}></Route>
       </Routes>
 
