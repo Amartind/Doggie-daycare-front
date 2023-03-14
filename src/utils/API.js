@@ -9,9 +9,10 @@ const getAllOwners = function (id) {
     return fetch(`${URL_PREFIX}/api/owners/${id}`).then((res) => res.json());
 }
 
-const getAllMeetupsRadius = function () {
 
-}
+// const getAllMeetupsRadius = function () {
+
+// }
 
 const makeAMeetup = function (meetupObj, token) {
     return fetch(`${URL_PREFIX}/api/meetups`, {

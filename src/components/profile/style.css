@@ -1,0 +1,38 @@
+.datebutton{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white; 
+    color: black; 
+    border: 3px solid #4CAF50 !important;
+    margin-bottom: 5px;
+}
+
+.datebutton:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.smaller{
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* display:inline-block; */
+    width: 68%;
+    text-align: center
+}
+
+.bigger{
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    margin-bottom: 1%;
+}
+
+.margin{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.zero{
+    margin-top: 1%;
+}
