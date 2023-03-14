@@ -52,7 +52,7 @@ function App() {
         <Route path='/addapooch' element={<Addpooch isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
         <Route path='/localpups' element={<Localpups />}></Route>
         <Route path='/mydoggies' element={<MyDoggies isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
-        <Route path='/profile' element={<Profile token={token} userId={userId}/>}></Route>
+        <Route path='/profile/:id' element={<Profile token={token} userId={userId}/>}></Route>
         <Route path='/login' element={<Login setToken={setToken} setUserId={setUserId} setIsLoggedIn={setIsLoggedIn} />}></Route>
         <Route path='/signup' element={<Signup setToken={setToken} setUserId={setUserId} setIsLoggedIn={setIsLoggedIn} />}></Route>
         <Route path='*' element={<Homepage />}></Route>
