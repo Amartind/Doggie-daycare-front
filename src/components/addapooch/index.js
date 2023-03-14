@@ -130,7 +130,7 @@ function Addpooch() {
 
         </div>
         <div>
-          {/* cloudinary photo goes here */}
+         
         </div>
       </form>
 
