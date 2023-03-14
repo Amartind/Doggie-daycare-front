@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import './style.css'
 const { getAllPets, getAllOwners, isValidToken, login, signup, addapet, deletepet, editOwner } = require("../../utils/API.js");
@@ -7,7 +8,7 @@ function Login(props) {
   // Here we set two state variables for firstName and lastName using `useState`
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate();
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
     const { name, value } = e.target;
@@ -35,6 +36,7 @@ function Login(props) {
           localStorage.setItem("token",response.token)
           setUserName('');
           setPassword('');
+          navigate("/dashboard")
           // perform any actions needed for successful login
         } else {
           alert("Invalid Credentials")
@@ -70,7 +72,7 @@ function Login(props) {
           placeholder="Password"
           className="inputfield"
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <button className="datebutton rounded" type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

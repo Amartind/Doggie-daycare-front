@@ -18,12 +18,9 @@ const isValidToken = function (token) {
 }
 
 const login = function (ownerObj) {
-    const userBody = {
-        "username": ownerObj
-    };
     return fetch(`${URL_PREFIX}/api/owners/login`, {
         method: "POST",
-        body: JSON.stringify(userBody),
+        body: JSON.stringify(ownerObj),
         headers: {
             "Content-Type": "application/json"
         },
