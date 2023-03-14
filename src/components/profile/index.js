@@ -124,7 +124,7 @@ function Profile(props) {
           placeholder={user.address}
           className="inputfield"
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <button className="datebutton" type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>
