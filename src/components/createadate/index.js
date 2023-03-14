@@ -91,7 +91,7 @@ function CreateADate() {
                             className='datefield py-8 inputfield'
                         />
                     <br/>
-                        <button className="datebutton rounded order-last" type="button" onClick={handleFormSubmit}>Send</button>
+                        <button className="datebutton rounded order-last button" type="button" onClick={handleFormSubmit}>Send</button>
                     </div>
                 </form>
             </div>

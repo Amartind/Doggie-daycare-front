@@ -26,7 +26,7 @@
 .dateinput{
     padding: 1px;
 }
-.datebutton{
+.button{
     border: 2px solid red;
     max-width: fit-content;
     justify-items: center;
