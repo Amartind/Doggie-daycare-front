@@ -15,7 +15,7 @@ function MyDoggies(props) {
         <div className="mydoggies-container">
             <p>My Doggies</p>
             <div className="dog-container">
-                {/* {dogs && dogs.map((dog) => (
+                {pets && pets.map((dog) => (
                     <div className="dog" key={dog.id}>
                         <div className="dog-info">
                             <p>Dog Name: {pets.name}</p>

@@ -1,16 +1,18 @@
-
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import API from "../../utils/API";
 import './style.css'
 import { useParams } from "react-router-dom";
-import LOGO from "./LogoDogs.png"
+import LOGO from "./LogoDogs.png";
+const { isValidToken} = require("../../utils/API.js");
 
 const Navbar = (props) => {
     const params = useParams();
     console.log(params)
-    const [Loggedin, setLoggedin] = useState({})
-    function hello(){
+    
+    
+    
+    function hello() {
         props.setIsLoggedIn(false);
     }
         return (
@@ -36,22 +38,22 @@ const Navbar = (props) => {
                               <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto" >Add Dog</Link>
                               <Link to="/" className="dropdownlink p-4 navlink flex-auto" onClick={hello}>Logout</Link>
 
-                              </div>
                             </div>
-                         </div>
-                            </div>
-                            :
-                            
-                        <div className="notsignedin justify-self-end down flex-auto">
-                                <Link to="/login" className="p-4 navlink flex-auto">Login</Link>
-                                <Link to="/signup" className="p-4 navlink flex-auto">Sign-up</Link>
-                        </div>      
-                     }
-                     
-                 </div>
-             </div>
-        )
-            
+                        </div>
+                    </div>
+                </div>
+                    :
+
+                    <div className="notsignedin justify-self-end down flex-auto">
+                        <Link to="/login" className="p-4 navlink flex-auto">Login</Link>
+                        <Link to="/signup" className="p-4 navlink flex-auto">Sign-up</Link>
+                    </div>
+                }
+
+            </div>
+        </div>
+    )
+
 }
 
 export default Navbar

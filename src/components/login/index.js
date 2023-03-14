@@ -4,10 +4,15 @@ import './style.css'
 const { getAllPets, getAllOwners, isValidToken, login, signup, addapet, deletepet, editOwner } = require("../../utils/API.js");
 
 
+
+
 function Login(props) {
   // Here we set two state variables for firstName and lastName using `useState`
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  
+  const savedToken = localStorage.getItem("token");
+    
   const navigate = useNavigate();
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -28,12 +33,20 @@ function Login(props) {
 
       .then((response) => {
         if (response.token) {
-
           console.log('Login successful!');
           props.setToken(response.token);
           props.setIsLoggedIn(true);
           props.setUserId(response.user.id)
-          localStorage.setItem("token",response.token)
+          localStorage.setItem("token", response.token)
+          if (savedToken){
+            isValidToken(savedToken).then(tokenData=>{
+            if(tokenData.isValid){
+              props.setIsLoggedIn(true)
+            } else {
+                localStorage.removeItem("token")
+              }
+            })
+          }
           setUserName('');
           setPassword('');
           navigate("/dashboard")
@@ -49,7 +62,7 @@ function Login(props) {
       .catch(error => {
         console.error('Failed to send request:', error);
       });
-    
+
   };
 
 
@@ -72,7 +85,7 @@ function Login(props) {
           placeholder="Password"
           className="inputfield"
         />
-        <button className="datebutton rounded" type="button" onClick={handleFormSubmit}>
+        <button className="button rounded loginbtn" type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>
