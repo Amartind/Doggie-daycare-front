@@ -4,6 +4,8 @@ import './style.css'
 const { getAllPets, getAllOwners, isValidToken, login, signup, addapet, deletepet, editOwner } = require("../../utils/API.js");
 
 
+
+
 function Login(props) {
   // Here we set two state variables for firstName and lastName using `useState`
   const [username, setUserName] = useState('');
@@ -33,7 +35,7 @@ function Login(props) {
           props.setToken(response.token);
           props.setIsLoggedIn(true);
           props.setUserId(response.user.id)
-          localStorage.setItem("token",response.token)
+          localStorage.setItem("token", response.token)
           setUserName('');
           setPassword('');
           navigate("/dashboard")
@@ -49,7 +51,7 @@ function Login(props) {
       .catch(error => {
         console.error('Failed to send request:', error);
       });
-    
+
   };
 
 

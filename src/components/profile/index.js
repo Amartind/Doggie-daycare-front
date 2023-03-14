@@ -65,7 +65,7 @@ function Profile(props) {
           name="fullname"
           onChange={handleInputChange}
           type="text"
-          placeholder={user.name}
+          placeholder={user.fullname}
           className="inputfield"
         />
         <input
