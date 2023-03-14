@@ -24,7 +24,7 @@ function Login() {
     };
 
     login(owner)
-      .then((response,err) => {
+      .then((response, err) => {
         if (response.ok) {
           console.log('Login successful!');
           // perform any actions needed for successful login
