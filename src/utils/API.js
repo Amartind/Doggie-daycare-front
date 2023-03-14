@@ -68,6 +68,33 @@ const editOwner = function (ownerObj, ownerId, token) {
     }).then((res) => res.json());
 }
 
+const getAllMeetups = function(token) {
+    return fetch(`${URL_PREFIX}/api/meetups/`, {
+        method: "GET",
+        headers: {
+            "authorization": `Bearer ${token}`,
+        },
+    }).then((res) => res.json());
+}
+
+const getMeetupById = function(id, token) {
+    return fetch(`${URL_PREFIX}/api/meetups/${id}`, {
+        method: "GET",
+        headers: {
+            "authorization": `Bearer ${token}`,
+        },
+    }).then((res) => res.json());
+}
+
+const searchByRadius = function (username, radius) {
+    return fetch(`${URL_PREFIX}/api/meetups/${username}/${radius}`, {
+        method: "GET",
+        headers: {
+            "authorization": `Bearer ${token}`,
+        },
+    }).then((res) => res.json());
+}
+
 module.exports = {
     getAllPets,
     getAllOwners,
@@ -76,5 +103,8 @@ module.exports = {
     signup,
     addapet,
     deletepet,
-    editOwner
+    editOwner,
+    searchByRadius,
+    getAllMeetups,
+    getMeetupById
 }
