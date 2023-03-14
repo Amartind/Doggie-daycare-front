@@ -72,7 +72,7 @@ function Signup(props) {
   };
   return (
     <div className="container">
-      <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
+      <form className="signupform smaller grid gap-4 grid-cols-1 grid-rows-6">
         <input
 
           value={name}
@@ -122,7 +122,7 @@ function Signup(props) {
           placeholder="Address"
           className="inputfield"
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <button className="datebutton" type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

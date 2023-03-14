@@ -72,8 +72,8 @@ function Profile(props) {
 
   return (
     <div className="container">
-      <p>Welcome {fullname}</p>
-      <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
+      <p className="flex justify-center text-lg">Welcome {fullname}</p><br/>
+      <form className="signupform zero grid gap-4 smaller grid-cols-1 grid-rows-6">
         <input
           value={fullname}
           name="fullname"
@@ -122,7 +122,7 @@ function Profile(props) {
           placeholder={user.address}
           className="inputfield"
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <button className="datebutton" type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

@@ -55,7 +55,7 @@ function Login(props) {
 
   return (
     <div className="container">
-      <form className="loginform grid gap-4 grid-cols-1 grid-rows-2">
+      <form className="loginform smaller grid gap-4 grid-cols-1 grid-rows-2">
         <input
           value={username}
           name="username"

@@ -36,6 +36,11 @@
     text-align: center
 }
 .datefield{
-    border: 2px solid rgb(70, 70, 70);
+    border: 2px solid gray;
     padding: 5px;
+}
+
+.evil{
+    margin-top: 0%;
+    padding-top: 7px;
 }
