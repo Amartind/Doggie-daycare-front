@@ -47,10 +47,9 @@ function Signup(props) {
           props.setToken(response.token);
           props.setIsLoggedIn(true);
           props.setUserId(response.user.id)
-          navigate("/dashboard");
         } else {
           console.error('Failed to add owner to database!');
-          localStorage.setItem("token",response.token)
+          localStorage.setItem("token", response.token)
           setName('');
           setUserName('');
           setEmail('');
@@ -62,14 +61,14 @@ function Signup(props) {
       .catch(error => {
         console.error('Failed to send request:', error);
       });
-      
-      setName('');
-      setUserName('');
-      setEmail('');
-      setPassword('');
-      setPhone('');
-      setAddress('');
-  
+
+    setName('');
+    setUserName('');
+    setEmail('');
+    setPassword('');
+    setPhone('');
+    setAddress('');
+
   };
   return (
     <div className="container">
@@ -123,7 +122,7 @@ function Signup(props) {
           placeholder="Address"
           className="inputfield"
         />
-        <button className="datebutton rounded" type="button" onClick={handleFormSubmit}>
+        <button type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

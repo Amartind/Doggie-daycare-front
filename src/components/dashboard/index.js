@@ -2,8 +2,12 @@ import React, {useState,useEffect} from "react";
 import './style.css'
 import { Link } from 'react-router-dom';
 import API from "../../utils/API"
+import { useParams } from "react-router-dom";
+const { getAllPets, getAllOwners, isValidToken, login, signup, addapet, deletepet, editOwner } = require("../../utils/API.js");
 
-export default function Dashboard() {
+
+export default function Dashboard(props) {
+  const params = useParams();
   const [loggedIN, setloggedIN] = useState([])
   // useEffect(()=>{
   //   API
@@ -19,5 +23,11 @@ export default function Dashboard() {
           <h5 className='flex justify-center flex-auto'> If any of your info changes, you can update things in your <Link className="bold" to="/profile">&nbsp;Profile Page&nbsp;</Link></h5><br/>
         </div>
     </div>
+
+  //   :
+  
+  // }
+
+    
   )
 }
