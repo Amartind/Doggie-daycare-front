@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getAllOwners } from "../../utils/API";
+import { editOwner, getAllOwners } from "../../utils/API";
 import MyDoggies from '../mydoggies';
 import './style.css'
 
@@ -14,7 +14,7 @@ function Profile(props) {
   const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [phonenumber, setPhoneNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const fetchUser = () => {
     getAllOwners(params.id).then((data) => {
@@ -34,14 +34,14 @@ function Profile(props) {
 
     if (name === 'username') {
       return setUserName(value)
-    } else if (name === 'password') {
-      return setPassword(value)
     } else if (name === 'fullname') {
       return setFullName(value)
     } else if (name === 'email') {
       return setEmail(value)
-    } else if (name === 'phonenumber') {
-      return setPhoneNumber(value)
+    }else if (name === 'password') {
+      return setPassword(value)
+    } else if (name === 'phone') {
+      return setPhone(value)
     } else if (name === 'address') {
       return setAddress(value)
     }
@@ -50,6 +50,20 @@ function Profile(props) {
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+    editOwner(
+    {
+      name:setFullName()||user.name,
+      email:setEmail()||user.email,
+      phone:setPhone()||user.phone,
+      password:setPassword()||user.password,
+      username:setUserName()||user.username,
+      address:setAddress()||user.address
+    },
+    user.id,
+    localStorage.getItem("token")
+    ).then((data) =>{
+      console.log(data)
+    })
   };
 
   useEffect(() => {
@@ -89,15 +103,15 @@ function Profile(props) {
           name="password"
           onChange={handleInputChange}
           type="password"
-          placeholder={user.password}
+          placeholder="Password"
           className="inputfield"
         />
         <input
-          value={phonenumber}
-          name="phonenumber"
+          value={phone}
+          name="phone"
           onChange={handleInputChange}
           type="text"
-          placeholder={user.phonenumber}
+          placeholder={user.phone}
           className="inputfield"
         />
         <input
@@ -115,23 +129,7 @@ function Profile(props) {
     </div>
   );
 
-  const Profile = (props) => {
-    const { name, age, breed, gender, personality, snipsnip, vaccinated, dogs } = props;
 
-    return (
-      <div>
-        <h2>{name}</h2>
-        <p>Age: {age}</p>
-        <p>Breed: {breed}</p>
-        <p>Gender: {gender}</p>
-        <p>Personality: {personality}</p>
-        <p>SnipSnip: {snipsnip}</p>
-        <p>Vaccinated: {vaccinated}</p>
-
-        <MyDoggies dogs={dogs} />
-      </div>
-    );
-  };
 }
 
 export default Profile;
