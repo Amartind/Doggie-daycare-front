@@ -1,53 +1,38 @@
 import React from 'react';
-import './style.css'
+import './style.css';
 
 function MyDoggies(props) {
+    const { dogs } = props;
+
+    const handleDelete = (id) => {
+        // create a new array with all dogs except for the one with the matching id
+        const updatedDogs = dogs.filter((dog) => dog.id !== id);
+        // call a function to update the state of the dogs in the parent component
+        props.updateDogs(updatedDogs);
+    };
+
     return (
         <div className="mydoggies-container">
             <p>My Doggies</p>
             <div className="dog-container">
-                <div className="dog">
-                    {/* <img cloudinary image /> */}
-                    <div className="dog-info">
-                        {/* can change dog id when complete */}
-                        <p>Dog Name: {props.dog1.dogname}</p>
-                        <p>Gender: {props.dog1.doggender}</p>
-                        <p>Age: {props.dog1.dogage}</p>
-                        <p>Breed: {props.dog1.dogbreed}</p>
-                        <p>Personality: {props.dog1.dogpersonality}</p>
-                        <p>Snip Snip: {props.dog1.snipsnip}</p>
-                        <p>Vaccinated: {props.dog1.vaccinated}</p>
+                {dogs.map((dog) => (
+                    <div className="dog" key={dog.id}>
+                        <div className="dog-info">
+                            <p>Dog Name: {dog.name}</p>
+                            <p>Gender: {dog.gender}</p>
+                            <p>Age: {dog.age}</p>
+                            <p>Breed: {dog.breed}</p>
+                            <p>Personality: {dog.personality}</p>
+                            <p>Snip Snip: {dog.snipsnip}</p>
+                            <p>Vaccinated: {dog.vaccinated}</p>
+                            <button onClick={() => handleDelete(dog.id)}>Delete</button>
+                        </div>
                     </div>
-                </div>
-                <div className="dog">
-                    {/* <img cloudinary image /> */}
-                    <div className="dog-info">
-                        {/* can change dog id when complete */}
-                        <p>Dog Name: {props.dog2.dogname}</p>
-                        <p>Gender: {props.dog2.doggender}</p>
-                        <p>Age: {props.dog2.dogage}</p>
-                        <p>Breed: {props.dog2.dogbreed}</p>
-                        <p>Personality: {props.dog2.dogpersonality}</p>
-                        <p>Snip Snip: {props.dog2.snipsnip}</p>
-                        <p>Vaccinated: {props.dog2.vaccinated}</p>
-                    </div>
-                </div>
-                <div className="dog">
-                    {/* <img cloudinary image /> */}
-                    <div className="dog-info">
-                        {/* can change dog id when complete */}
-                        <p>Dog Name: {props.dog3.dogname}</p>
-                        <p>Gender: {props.dog3.doggender}</p>
-                        <p>Age: {props.dog3.dogage}</p>
-                        <p>Breed: {props.dog3.dogbreed}</p>
-                        <p>Personality: {props.dog3.dogpersonality}</p>
-                        <p>Snip Snip: {props.dog3.snipsnip}</p>
-                        <p>Vaccinated: {props.dog3.vaccinated}</p>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     );
 }
+
 
 export default MyDoggies;
