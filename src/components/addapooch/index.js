@@ -41,13 +41,25 @@ function Addpooch() {
         else return setVaccinated(true)
 
       }
+      
     } 
     
    
     const handleFormSubmit = (e) => {
       // Preventing the default behavior of the form submit (which is to refresh the page)
       e.preventDefault();
-      
+      const petObj= {
+        name:dogname,
+        gender:doggender,
+        age:dogage,
+        breed:dogbreed,
+        personality:dogpersonality,
+        spayed_neutered:snipsnip,
+        vaccinated:vaccinated
+      }
+      addapet(petObj,localStorage.getItem("token")).then((data) =>{
+        console.log(data)
+      })
       
     };
     
