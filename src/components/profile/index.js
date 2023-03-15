@@ -16,6 +16,7 @@ function Profile(props) {
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
+  
   const fetchUser = () => {
     getAllOwners(params.id).then((data) => {
       setUser(data);
@@ -50,15 +51,16 @@ function Profile(props) {
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
-    editOwner(
-    {
+    const userinfo ={
       name:setFullName()||user.name,
       email:setEmail()||user.email,
       phone:setPhone()||user.phone,
       password:setPassword()||user.password,
       username:setUserName()||user.username,
       address:setAddress()||user.address
-    },
+    }
+    editOwner(
+    userinfo,
     user.id,
     localStorage.getItem("token")
     ).then((data) =>{
@@ -72,14 +74,14 @@ function Profile(props) {
 
   return (
     <div className="container">
-      <p>Welcome {fullname}</p>
+      <p>Welcome {user.name}</p>
       <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
         <input
           value={fullname}
           name="fullname"
           onChange={handleInputChange}
           type="text"
-          placeholder={user.fullname}
+          placeholder={user.name}
           className="inputfield"
         />
         <input
@@ -122,7 +124,7 @@ function Profile(props) {
           placeholder={user.address}
           className="inputfield"
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <button className="datebutton" type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

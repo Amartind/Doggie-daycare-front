@@ -6,14 +6,19 @@
     max-height: 70vh;
 }
 .adddogbtn{
-    border: 2px solid rgb(173, 35, 20);
     max-width: fit-content;
-    justify-items: center;
     margin-left: auto;
     margin-right: auto;
-    display:inline-block;
-    text-align: center
+    background-color: white; 
+    color: black; 
+    border: 3px solid salmon;
 }
+
+ .adddogbtn:hover {
+    background-color: salmon;
+    color: white;
+}
+
 .inputfield{
     background-color: rgb(221, 242, 251);
     border: 2px solid grey;

@@ -10,6 +10,9 @@ function Login(props) {
   // Here we set two state variables for firstName and lastName using `useState`
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  
+  const savedToken = localStorage.getItem("token");
+    
   const navigate = useNavigate();
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -32,6 +35,15 @@ function Login(props) {
           props.setIsLoggedIn(true);
           props.setUserId(response.user.id)
           localStorage.setItem("token", response.token)
+          if (savedToken){
+            isValidToken(savedToken).then(tokenData=>{
+            if(tokenData.isValid){
+              props.setIsLoggedIn(true)
+            } else {
+                localStorage.removeItem("token")
+              }
+            })
+          }
           setUserName('');
           setPassword('');
           navigate("/dashboard")
@@ -52,7 +64,7 @@ function Login(props) {
 
   return (
     <div className="container">
-      <form className="loginform grid gap-4 grid-cols-1 grid-rows-2">
+      <form className="loginform smaller grid gap-4 grid-cols-1 grid-rows-2">
         <input
           value={username}
           name="username"
@@ -69,7 +81,7 @@ function Login(props) {
           placeholder="Password"
           className="inputfield"
         />
-        <button className="datebutton rounded" type="button" onClick={handleFormSubmit}>
+        <button className="button rounded loginbtn" type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

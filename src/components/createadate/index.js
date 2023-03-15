@@ -42,7 +42,7 @@ function CreateADate() {
             <p className='flex justify-center text-lg'>Make a Play Date</p>
             <br/>
             {/* <div className='flex justify-center flex-auto'> */}
-                <form className="grid centerMe p-4 grid-cols-1 grid-rows-5 rounded-md">
+                <form className="grid centerMe evil p-4 grid-cols-1 grid-rows-5 rounded-md">
                     <div className="grid gap-4 grid grid-cols-1 grid-rows-5">
                         <input
                             value={eventTitle}
@@ -50,7 +50,7 @@ function CreateADate() {
                             onChange={handleInputChange}
                             type="text"
                             placeholder='Event Title'
-                            className='datefield inputfield'
+                            className='inputfield'
                         />
 
                         <input
@@ -91,7 +91,7 @@ function CreateADate() {
                             className='datefield py-8 inputfield'
                         />
                     <br/>
-                        <button className="datebutton rounded order-last" type="button" onClick={handleFormSubmit}>Send</button>
+                        <button className="datebutton rounded order-last button" type="button" onClick={handleFormSubmit}>Send</button>
                     </div>
                 </form>
             </div>
