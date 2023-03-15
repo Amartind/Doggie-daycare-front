@@ -1,8 +1,10 @@
 import React, { useState, useEffect  } from 'react';
 import { useParams } from "react-router-dom";
 import './style.css'
-import { makeAMeetup, getAllOwners } from "../../utils/API";
+import { makeAMeetup, getAllOwners, } from "../../utils/API";
 import { useNavigate } from "react-router-dom";
+
+
 
 function CreateADate(props) {
     const params = useParams();
@@ -10,8 +12,19 @@ function CreateADate(props) {
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [dateNotes, setDateNotes] = useState('');
-    const navigate = useNavigate();
+    const navigate = useNavigate();   
+    const [user, setUser] = useState({}); 
     // Executing the value and name of the input on change
+
+    const fetchUser = () => {
+        getAllOwners(props.userId).then((data) => {
+          setUser(data);
+          console.log(data)
+          console.log(props.userId);
+        
+        })
+      }
+
     const handleInputChange = (e) => {
 
         const { name, value } = e.target;
@@ -30,13 +43,19 @@ function CreateADate(props) {
     // Prevents refreshing the page a default behavior
     const handleFormSubmit = (e) => {
         e.preventDefault();
+
         var dateObj = {
             name: eventTitle,
             dateTime: date,
             description: dateNotes,
-            address: location
+            address: location,
+            OwnerId: props.userId
         }
-        makeAMeetup(dateObj, params.token)
+        console.log("__begin_meetup_submit__")
+        console.log(dateObj)
+        console.log(props.userId)
+        console.log(params.id)
+        makeAMeetup(dateObj, params.id)
         setEventTitle("");
         setDate("");
         setLocation("");
@@ -46,6 +65,10 @@ function CreateADate(props) {
             navigate("/dashboard")
         })
     };
+    
+    useEffect(() => {
+        fetchUser();
+      }, [props.userId, params.id]);
 
     return (
         <div className="container flex flex-col justify-center justify-self-center rounded flex-auto"><br/>
