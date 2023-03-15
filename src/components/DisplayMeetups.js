@@ -1,4 +1,3 @@
-import React from 'react'
 
 export default function DisplayMeetup(props) {
     console.log(props.Meetup)

@@ -3,28 +3,26 @@ import './style.css'
 import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import { editaMeetup, deleteAMeetup, getAllOwners } from "../../utils/API.js";
-import DisplayMeetup from '../DisplayMeetups';
+import DisplayMeetup from './DisplayMeetups';
+import dayjs from "dayjs";
 
 export default function Dashboard(props) {
   const params = useParams();
   const [user, setUser] = useState({});
   console.log("dashboard")
-  console.log(props.userId)
-  console.log(props.user)
-  console.log("end dashboard")
-
-
-  // useEffect(()=>{
-  //   API
-  // // })
-  // if (params.id === )
-  // match userid to meetup's owner id
+  // console.log(props.token)
+  // console.log(props.user)
+ 
+  
   return (
     <div className='mainBody flex flex-auto flex-col'>
-      {(props.userId && props.user.Meetups.length > 0) ? (
+        { (props.userId && props.user.Meetups.length > 0) ? (
+          <div className='nothing'>
+        <h3 className="Center">Doggie Dates You're Hosting</h3>
         <div className='Meetupbox'>
-          <h3 className="Center">Doggie Dates You're Hosting</h3>
-          {props.user.Meetups.map((meetup) => (<DisplayMeetup Meetup={meetup} />))}
+        {props.user.Meetups.map((meetup)=>(<DisplayMeetup token={props.token} Meetup={meetup}/>))}
+        </div>
+       
         </div>
       ) :
         (<div><h2 className="title flex justify-center">Welcome! <h4><br />If this is your first time here let me show you around!</h4><hr /></h2>
