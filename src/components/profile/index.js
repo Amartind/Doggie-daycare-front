@@ -46,18 +46,19 @@ function Profile(props) {
     } else if (name === 'address') {
       return setAddress(value)
     }
+    
   };
 
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
     const userinfo ={
-      name:setFullName()||user.name,
-      email:setEmail()||user.email,
-      phone:setPhone()||user.phone,
-      password:setPassword()||user.password,
-      username:setUserName()||user.username,
-      address:setAddress()||user.address
+      name:fullname||user.name,
+      email:email||user.email,
+      phone:phone||user.phone,
+      password:password||user.password,
+      username:username||user.username,
+      address:address||user.address
     }
     editOwner(
     userinfo,
