@@ -39,7 +39,7 @@ function CreateADate() {
 
     return (
         <div className="container flex flex-col justify-center justify-self-center rounded flex-auto"><br/>
-            <p className='flex justify-center text-lg'>Make a Play Date</p>
+            <p className='flex justify-center text-lg'>Make a Play Date 📅 </p>
             <br/>
             {/* <div className='flex justify-center flex-auto'> */}
                 <form className="grid centerMe evil p-4 grid-cols-1 grid-rows-5 rounded-md">

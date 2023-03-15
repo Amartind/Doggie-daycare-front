@@ -26,9 +26,9 @@ const Navbar = (props) => {
                      <Link to="/" className="navlink p-2 flex-auto horizontal up">Home</Link>}
      
                      {props.isLoggedIn?<div className="signedin justify-self-end flex-auto">
-                         <Link to="/localpups" className="p-4 navlink flex-auto">Local Pups</Link>
-                         <Link to="/currentplaydates" className="p-4 navlink flex-auto">Local Meetups</Link>
-                         <Link to="/createaplaydate" className="p-4 navlink flex-auto">Make a meet up</Link>
+                         {/* <Link to="/localpups" className="p-4 navlink flex-auto">Local Pups</Link> */}
+                         <Link to="/currentplaydates" className="p-4 navlink flex-auto">Local Play Dates</Link>
+                         <Link to="/createaplaydate" className="p-4 navlink flex-auto">Make a Play Date</Link>
                          <div className="dropdown">
                             <button className="dropbtn">Profile</button>
                             <div className="dropdown-content ">
