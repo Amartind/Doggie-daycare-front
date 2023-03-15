@@ -46,6 +46,7 @@ function Profile(props) {
     } else if (name === 'address') {
       return setAddress(value)
     }
+    
   };
 
   const handleFormSubmit = (e) => {
