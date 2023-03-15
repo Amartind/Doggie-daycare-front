@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { editOwner, getAllOwners } from "../../utils/API";
+// import { hashSync } from "bcrypt";s
 import MyDoggies from '../mydoggies';
 import './style.css'
 
@@ -52,14 +53,18 @@ function Profile(props) {
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+    
     const userinfo ={
-      name:fullname||user.name,
-      email:email||user.email,
-      phone:phone||user.phone,
-      password:password||user.password,
-      username:username||user.username,
-      address:address||user.address
+      name: fullname || user.name,
+      email:email || user.email,
+      phone:phone || user.phone,
+      password: 
+      // hashSync(password, 4) ||
+       user.password,
+      username:username || user.username,
+      address:address || user.address
     }
+    console.log(userinfo)
     editOwner(
     userinfo,
     user.id,
