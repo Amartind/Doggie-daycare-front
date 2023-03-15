@@ -49,8 +49,10 @@ function CreateADate(props) {
             address: location,
             OwnerId: props.userId
         }
+        console.log(dateObj)
+        console.log(props.token)
         console.log("__begin_meetup_submit__")
-        makeAMeetup(dateObj, params.id)
+        makeAMeetup(dateObj, props.token)
         setEventTitle("");
         setDate("");
         setLocation("");
