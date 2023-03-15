@@ -118,8 +118,8 @@ const getMeetupById = function(id, token) {
     }).then((res) => res.json());
 }
 
-const searchByRadius = function (radius, token) {
-    return fetch(`${URL_PREFIX}/api/meetups/search/${radius}`, {
+const searchByRadius = async function (radius, token) {
+    return await fetch(`${URL_PREFIX}/api/meetups/search/${radius}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
