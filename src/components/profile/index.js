@@ -9,7 +9,7 @@ import './style.css'
 
 function Profile(props) {
   const params = useParams();
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({}); 
   const [isMyPage, setIsMyPage] = useState(false);
   const [fullname, setFullName] = useState('');
   const [username, setUserName] = useState('');
@@ -80,8 +80,9 @@ function Profile(props) {
 
   return (
     <div className="container">
-      <p>Welcome {user.name}</p>
-      <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
+      <p className="smaller text-lg">Welcome {user.name}!</p>
+      <p className="smaller">If any of your info has changed please update it here:</p>
+      <form className="signupform smaller grid gap-4 grid-cols-1 grid-rows-6">
         <input
           value={fullname}
           name="fullname"
@@ -111,7 +112,7 @@ function Profile(props) {
           name="password"
           onChange={handleInputChange}
           type="password"
-          placeholder="Password"
+          placeholder="Password. Shh.. it's a secret 😉 "
           className="inputfield"
         />
         <input

@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
+import { useParams } from "react-router-dom";
 import './style.css'
+import { makeAMeetup, getAllOwners } from "../../utils/API";
+import { useNavigate } from "react-router-dom";
 
-function CreateADate() {
+function CreateADate(props) {
+    const params = useParams();
     const [eventTitle, setEventTitle] = useState('');
     const [date, setDate] = useState('');
-    const [time, setTime] = useState('');
     const [location, setLocation] = useState('');
     const [dateNotes, setDateNotes] = useState('');
-
+    const navigate = useNavigate();
     // Executing the value and name of the input on change
     const handleInputChange = (e) => {
 
@@ -17,8 +20,6 @@ function CreateADate() {
             return setEventTitle(value)
         } else if (name === "date") {
             return setDate(value)
-        } else if (name === "time") {
-            return setTime(value)
         } else if (name === "location") {
             return setLocation(value)
         } else if (name === "dateName") {
@@ -29,17 +30,26 @@ function CreateADate() {
     // Prevents refreshing the page a default behavior
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        alert('Date added');
+        var dateObj = {
+            name: eventTitle,
+            dateTime: date,
+            description: dateNotes,
+            address: location
+        }
+        makeAMeetup(dateObj, params.token)
         setEventTitle("");
         setDate("");
-        setTime("");
         setLocation("");
         setDateNotes("")
+        getAllOwners(props.userId).then((data)=>{
+            props.setUser(data)
+            navigate("/dashboard")
+        })
     };
 
     return (
-        <div className="container flex flex-col justify-center justify-self-center rounded flex-auto">
-            <p className='flex justify-center text-lg'>Make a Play Date</p>
+        <div className="container flex flex-col justify-center justify-self-center rounded flex-auto"><br/>
+            <p className='flex justify-center text-lg'>Make a Play Date 📅 </p>
             <br/>
             {/* <div className='flex justify-center flex-auto'> */}
                 <form className="grid centerMe evil p-4 grid-cols-1 grid-rows-5 rounded-md">
@@ -62,22 +72,13 @@ function CreateADate() {
                             className='datefield inputfield'
                         />
 
-                        <input
-                            value={time}
-                            name='time'
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder='Time' 
-                            className='datefield inputfield'
-                        />
-
 
                         <input
                             value={location}
                             name='location'
                             onChange={handleInputChange}
                             type="text"
-                            placeholder='Location' 
+                            placeholder='Full Location Address' 
                             className='datefield inputfield'
                         />
 
@@ -87,7 +88,7 @@ function CreateADate() {
                             name='dateName'
                             onChange={handleInputChange}
                             type="text"
-                            placeholder='Date Notes'
+                            placeholder='Date Notes. Things you might want people to know...'
                             className='datefield py-8 inputfield'
                         />
                     <br/>

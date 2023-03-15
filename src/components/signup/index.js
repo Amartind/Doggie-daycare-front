@@ -46,8 +46,8 @@ function Signup(props) {
           console.log('Owner added to database!');
           props.setToken(response.token);
           props.setIsLoggedIn(true);
-          props.setUserId(response.user.id)
-          navigate("/dashboard");
+          props.setUserId(response.user.id) 
+          navigate("/addapooch");
         } else {
           console.error('Failed to add owner to database!');
           localStorage.setItem("token", response.token)
@@ -72,7 +72,8 @@ function Signup(props) {
 
   };
   return (
-    <div className="container">
+    <div className="container"><br/>
+      <p className='title flex justify-center text-lg'>Excited for Doggie Dates? Fill out the form below and get started!</p>
       <form className="signupform smaller grid gap-4 grid-cols-1 grid-rows-6">
         <input
 

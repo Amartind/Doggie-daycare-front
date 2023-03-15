@@ -26,17 +26,17 @@ const Navbar = (props) => {
                      <Link to="/" className="navlink p-2 flex-auto horizontal up">Home</Link>}
      
                      {props.isLoggedIn?<div className="signedin justify-self-end flex-auto">
-                         <Link to="/localpups" className="p-4 navlink flex-auto">Local Pups</Link>
-                         <Link to="/currentplaydates" className="p-4 navlink flex-auto">Local Meetups</Link>
-                         <Link to="/createaplaydate" className="p-4 navlink flex-auto">Make a meet up</Link>
+                         {/* <Link to="/localpups" className="p-4 navlink flex-auto">Local Pups</Link> */}
+                         <Link to="/currentplaydates" className="p-4 navlink flex-auto">Local Play Dates</Link>
+                         <Link to="/createaplaydate" className="p-4 navlink flex-auto">Make a Play Date</Link>
                          <div className="dropdown">
                             <button className="dropbtn">Profile</button>
                             <div className="dropdown-content ">
                               <div className="grid grid-rows-4">
-                              <Link to={`/profile/${props.userId}`}  className="dropdownlink p-4 navlink flex-auto" >Edit Profile</Link>
-                              <Link to="/mydoggies" className="dropdownlink p-4 navlink flex-auto">My Dogs</Link>
-                              <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto" >Add Dog</Link>
-                              <Link to="/" className="dropdownlink p-4 navlink flex-auto" onClick={hello}>Logout</Link>
+                              <Link to={`/profile/${props.userId}`}  className="dropdownlink p-4 navlink flex-auto color" >Edit Profile</Link>
+                              <Link to="/mydoggies" className="dropdownlink p-4 navlink flex-auto color">My Dogs</Link>
+                              <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto color" >Add Dog</Link>
+                              <Link to="/" className="dropdownlink p-4 navlink flex-auto color" onClick={hello}>Logout</Link>
 
                             </div>
                         </div>

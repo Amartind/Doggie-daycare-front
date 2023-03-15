@@ -86,3 +86,8 @@
 .down{
   padding-top: 1%;
 }
+
+.color:hover{
+  color: blue;
+  text-decoration: underline;
+}

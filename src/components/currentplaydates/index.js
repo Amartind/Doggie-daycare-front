@@ -50,8 +50,8 @@ function Currentdates() {
 
     return (
         <div className="datemaincontainer  flex justify-center h-screen m-1">
-            <div className=' flex flex-col '>
-                <p className='title flex justify-center'>View Play Dates</p>
+            <div className=' flex flex-col '><br/>
+                <p className='title flex justify-center text-lg'>View Play Dates</p><br/>
                 <form className="dateform flex flex-col max-h-fit">
                     <div className="filterContainer flex flex-auto flex-row flex-wrap">
                         <input
