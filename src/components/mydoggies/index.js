@@ -7,6 +7,13 @@ function MyDoggies(props) {
     const { id } = useParams();
     const [pets, setPets] = useState([]);
     const [isMyPage, setIsMyPage] = useState(false);
+    const [petsName, setPetsName] = useState('');
+    const [petsGender, setPetsGender] = useState('');
+    const [petsAge, setPetsAge] = useState('');
+    const [petsBreed, setPetsBreed] = useState('');
+    const [petsPersonality, setPetsPersonality] = useState = ('');
+    const [snipSnip, setSnipSnip] = useState('');
+    const [vaccinated, setVaccinated] = useState('');
 
     useEffect(() => {
         const fetchPets = async () => {
