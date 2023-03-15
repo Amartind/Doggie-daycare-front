@@ -62,7 +62,7 @@
   display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */ 
+/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color:#81ecec;
 }
@@ -85,4 +85,9 @@
 
 .down{
   padding-top: 1%;
+}
+
+.color:hover{
+  color: #0984e3;
+  text-decoration: underline;
 }

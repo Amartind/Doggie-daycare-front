@@ -33,10 +33,10 @@ const Navbar = (props) => {
                             <button className="dropbtn">Profile</button>
                             <div className="dropdown-content ">
                               <div className="grid grid-rows-4">
-                              <Link to={`/profile/${props.userId}`}  className="dropdownlink p-4 navlink flex-auto" >Edit Profile</Link>
-                              <Link to="/mydoggies" className="dropdownlink p-4 navlink flex-auto">My Dogs</Link>
-                              <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto" >Add Dog</Link>
-                              <Link to="/" className="dropdownlink p-4 navlink flex-auto" onClick={hello}>Logout</Link>
+                              <Link to={`/profile/${props.userId}`}  className="dropdownlink p-4 navlink flex-auto color" >Edit Profile</Link>
+                              <Link to="/mydoggies" className="dropdownlink p-4 navlink flex-auto color">My Dogs</Link>
+                              <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto color" >Add Dog</Link>
+                              <Link to="/" className="dropdownlink p-4 navlink flex-auto color" onClick={hello}>Logout</Link>
 
                             </div>
                         </div>
