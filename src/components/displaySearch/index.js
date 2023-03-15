@@ -1,15 +1,16 @@
 import React from 'react'
+import dayjs from 'dayjs'
 
 
 export default function DisplaySearch(props) {
     console.log(props)
     return (
-        <div className='projectBox'>
-            <h4>{props.Meetup.name}</h4>
-            <p>{props.Meetup.dateTime}</p>
+        <div className='jasonsBox'>
+            <h4><b>{props.Meetup.name}</b></h4>
+            <p>date: {dayjs(props.Meetup.dateTime).format("MM/DD/YYYY")}</p>
             <p>{props.Meetup.address}</p>
             <p>{props.Meetup.description}</p>
-            <p>{props.Meetup.distance} miles away.</p>
+            <p><b>{props.Meetup.distance} miles away.</b></p>
         </div>
     )
 }
