@@ -63,7 +63,8 @@ function Login(props) {
 
 
   return (
-    <div className="container">
+    <div className="container"><br/>
+      <p className='title flex justify-center text-lg'>Welcome back! We're so excited to see you again 🐶</p>
       <form className="loginform smaller grid gap-4 grid-cols-1 grid-rows-2">
         <input
           value={username}
@@ -81,7 +82,7 @@ function Login(props) {
           placeholder="Password"
           className="inputfield"
         />
-        <button className="button rounded loginbtn" type="button" onClick={handleFormSubmit}>
+        <button className="button rounded datebutton loginbtn" type="button" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

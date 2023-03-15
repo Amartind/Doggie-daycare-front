@@ -106,7 +106,7 @@ function Profile(props) {
           name="password"
           onChange={handleInputChange}
           type="password"
-          placeholder="Password"
+          placeholder="Password. Shh.. it's a secret 😉 "
           className="inputfield"
         />
         <input

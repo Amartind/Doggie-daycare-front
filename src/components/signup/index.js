@@ -72,7 +72,8 @@ function Signup(props) {
 
   };
   return (
-    <div className="container">
+    <div className="container"><br/>
+      <p className='title flex justify-center text-lg'>Excited for Doggie Dates? Fill out the form below and get started!</p>
       <form className="signupform smaller grid gap-4 grid-cols-1 grid-rows-6">
         <input
 
