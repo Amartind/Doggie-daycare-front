@@ -50,7 +50,7 @@ function App() {
         <Route path='/createaplaydate' element={<CreateADate isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
         <Route path='/currentplaydates' element={<Currentdates />}></Route>
         <Route path='/addapooch' element={<Addpooch isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
-        <Route path='/localpups' element={<Localpups />}></Route>
+        {/* <Route path='/localpups' element={<Localpups />}></Route> */}
         <Route path='/mydoggies' element={<MyDoggies isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
         <Route path='/profile/:id' element={<Profile token={token} userId={userId}/>}></Route>
         <Route path='/login' element={<Login setToken={setToken} setUserId={setUserId} setIsLoggedIn={setIsLoggedIn} />}></Route>

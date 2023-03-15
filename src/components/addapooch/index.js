@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import './style.css'
 import { addapet, getAllOwners } from "../../utils/API";
@@ -14,6 +15,7 @@ function Addpooch() {
     const [snipsnip, setSnipSnip] = useState(false);
     const [vaccinated, setVaccinated] = useState(false);
     const [user, setUser] = useState({});
+    const navigate = useNavigate();
     // const femaleSelector = document.getElementById("female")
   
     const handleInputChange = (e) => {
@@ -64,6 +66,7 @@ function Addpooch() {
       }
       addapet(petObj,localStorage.getItem("token")).then((data) =>{
         console.log(data)
+        navigate("/dashboard");
       })
       
     });
