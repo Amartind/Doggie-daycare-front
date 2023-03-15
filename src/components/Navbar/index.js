@@ -35,7 +35,7 @@ const Navbar = (props) => {
                               <div className="grid grid-rows-4">
                               <Link to={`/profile/${props.userId}`}  className="dropdownlink p-4 navlink flex-auto color" >Edit Profile</Link>
                               <Link to="/mydoggies" className="dropdownlink p-4 navlink flex-auto color">My Dogs</Link>
-                              <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto color" >Add Dog</Link>
+                              <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto color" >Add a Dog</Link>
                               <Link to="/" className="dropdownlink p-4 navlink flex-auto color" onClick={hello}>Logout</Link>
 
                             </div>
