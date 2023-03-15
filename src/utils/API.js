@@ -9,10 +9,6 @@ const getAllOwners = function (id) {
     return fetch(`${URL_PREFIX}/api/owners/${id}`).then((res) => res.json());
 }
 
-const getAllMeetupsRadius = function () {
-
-}
-
 const makeAMeetup = function (meetupObj, token) {
     return fetch(`${URL_PREFIX}/api/meetups`, {
         method: "POST",
@@ -122,10 +118,11 @@ const getMeetupById = function(id, token) {
     }).then((res) => res.json());
 }
 
-const searchByRadius = function (username, radius, token) {
-    return fetch(`${URL_PREFIX}/api/meetups/${username}/${radius}`, {
+const searchByRadius = function (radius, token) {
+    return fetch(`${URL_PREFIX}/api/meetups/search/${radius}`, {
         method: "GET",
         headers: {
+            "Content-Type": "application/json",
             "authorization": `Bearer ${token}`,
         },
     }).then((res) => res.json());
