@@ -59,6 +59,7 @@ function CreateADate(props) {
         setDateNotes("")
         getAllOwners(props.userId).then((data)=>{
             props.setUser(data)
+            
             navigate("/dashboard")
         })
     };
