@@ -10,7 +10,7 @@ const getAllOwners = function (id) {
 }
 
 const makeAMeetup = function (meetupObj, token) {
-    return fetch(`${URL_PREFIX}/api/meetups`, {
+    return fetch(`${URL_PREFIX}/api/meetups/`, {
         method: "POST",
         body: JSON.stringify(meetupObj),
         headers: {

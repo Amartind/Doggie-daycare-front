@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { editOwner, getAllOwners } from "../../utils/API";
+// import { hashSync } from "bcrypt";s
 import MyDoggies from '../mydoggies';
 import './style.css'
 
@@ -8,7 +9,7 @@ import './style.css'
 
 function Profile(props) {
   const params = useParams();
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({}); 
   const [isMyPage, setIsMyPage] = useState(false);
   const [fullname, setFullName] = useState('');
   const [username, setUserName] = useState('');
@@ -46,19 +47,24 @@ function Profile(props) {
     } else if (name === 'address') {
       return setAddress(value)
     }
+    
   };
 
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+    
     const userinfo ={
-      name:setFullName()||user.name,
-      email:setEmail()||user.email,
-      phone:setPhone()||user.phone,
-      password:setPassword()||user.password,
-      username:setUserName()||user.username,
-      address:setAddress()||user.address
+      name: fullname || user.name,
+      email:email || user.email,
+      phone:phone || user.phone,
+      password: 
+      // hashSync(password, 4) ||
+       user.password,
+      username:username || user.username,
+      address:address || user.address
     }
+    console.log(userinfo)
     editOwner(
     userinfo,
     user.id,
@@ -74,8 +80,9 @@ function Profile(props) {
 
   return (
     <div className="container">
-      <p>Welcome {user.name}</p>
-      <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
+      <p className="smaller text-lg">Welcome {user.name}!</p>
+      <p className="smaller">If any of your info has changed please update it here:</p>
+      <form className="signupform smaller grid gap-4 grid-cols-1 grid-rows-6">
         <input
           value={fullname}
           name="fullname"
@@ -105,7 +112,7 @@ function Profile(props) {
           name="password"
           onChange={handleInputChange}
           type="password"
-          placeholder="Password"
+          placeholder="Password. Shh.. it's a secret 😉 "
           className="inputfield"
         />
         <input

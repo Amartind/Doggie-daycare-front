@@ -28,7 +28,7 @@ function MyDoggies(props) {
                             <button onClick={() => handleDelete(pets.id)}>Delete</button>
                         </div>
                     </div>
-                ))} */}
+                ))} 
             </div>
         </div>
     );

@@ -18,6 +18,7 @@ const { isValidToken} = require("./utils/API.js");
 function App() {
   const [token, setToken] = useState("");
   const [userId, setUserId] = useState(0);
+  const [user, setUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   useEffect(()=>{
     const savedToken = localStorage.getItem("token");
@@ -46,15 +47,15 @@ function App() {
       <Navbar isLoggedIn={isLoggedIn} userId={userId} logout={logout}/>
       <Routes>
         <Route path='/' element={<Homepage isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
-        <Route path='/dashboard' element={<Dashboard isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
-        <Route path='/createaplaydate' element={<CreateADate isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
+        <Route path='/dashboard' element={<Dashboard isLoggedIn={isLoggedIn} token={token} userId={userId} user={user}/>}></Route>
+        <Route path='/createaplaydate' element={<CreateADate isLoggedIn={isLoggedIn} token={token} userId={userId} setUser={setUser}/>}></Route>
         <Route path='/currentplaydates' element={<Currentdates />}></Route>
         <Route path='/addapooch' element={<Addpooch isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
-        <Route path='/localpups' element={<Localpups />}></Route>
+        {/* <Route path='/localpups' element={<Localpups />}></Route> */}
         <Route path='/mydoggies' element={<MyDoggies isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
         <Route path='/profile/:id' element={<Profile token={token} userId={userId}/>}></Route>
-        <Route path='/login' element={<Login setToken={setToken} setUserId={setUserId} setIsLoggedIn={setIsLoggedIn} />}></Route>
-        <Route path='/signup' element={<Signup setToken={setToken} setUserId={setUserId} setIsLoggedIn={setIsLoggedIn} />}></Route>
+        <Route path='/login' element={<Login setToken={setToken} setUserId={setUserId} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}></Route>
+        <Route path='/signup' element={<Signup setToken={setToken} setUserId={setUserId} setIsLoggedIn={setIsLoggedIn} setUser={setUser}/>}></Route>
         <Route path='*' element={<Homepage />}></Route>
       </Routes>
 
