@@ -8,7 +8,7 @@ import './style.css'
 
 function Profile(props) {
   const params = useParams();
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({}); 
   const [isMyPage, setIsMyPage] = useState(false);
   const [fullname, setFullName] = useState('');
   const [username, setUserName] = useState('');

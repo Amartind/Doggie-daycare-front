@@ -1,14 +1,16 @@
 import React, { useState, useEffect  } from 'react';
 import { useParams } from "react-router-dom";
 import './style.css'
-import { makeAMeetup } from "../../utils/API";
+import { makeAMeetup, getAllOwners } from "../../utils/API";
+import { useNavigate } from "react-router-dom";
 
-function CreateADate() {
+function CreateADate(props) {
+    const params = useParams();
     const [eventTitle, setEventTitle] = useState('');
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [dateNotes, setDateNotes] = useState('');
-
+    const navigate = useNavigate();
     // Executing the value and name of the input on change
     const handleInputChange = (e) => {
 
@@ -28,11 +30,21 @@ function CreateADate() {
     // Prevents refreshing the page a default behavior
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        alert('Date added');
+        var dateObj = {
+            name: eventTitle,
+            dateTime: date,
+            description: dateNotes,
+            address: location
+        }
+        makeAMeetup(dateObj, params.token)
         setEventTitle("");
         setDate("");
         setLocation("");
         setDateNotes("")
+        getAllOwners(props.userId).then((data)=>{
+            props.setUser(data)
+            navigate("/dashboard")
+        })
     };
 
     return (

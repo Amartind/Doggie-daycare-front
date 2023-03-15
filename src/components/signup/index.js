@@ -46,7 +46,7 @@ function Signup(props) {
           console.log('Owner added to database!');
           props.setToken(response.token);
           props.setIsLoggedIn(true);
-          props.setUserId(response.user.id)
+          props.setUserId(response.user.id) 
           navigate("/addapooch");
         } else {
           console.error('Failed to add owner to database!');

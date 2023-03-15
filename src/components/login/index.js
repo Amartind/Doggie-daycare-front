@@ -26,6 +26,15 @@ function Login(props) {
       username: username,
       password: password
     };
+    const fetchUser = () => {
+      console.log(props.userId)
+      getAllOwners(props.userId).then((data) => {
+        props.setUser(data);
+        console.log("+++++++++++++++++")
+        console.log(data)
+        console.log("+++++++++++++++++")
+      })
+    };
 
     login(owner)
       .then((response) => {
@@ -34,6 +43,7 @@ function Login(props) {
           props.setToken(response.token);
           props.setIsLoggedIn(true);
           props.setUserId(response.user.id)
+          // fetchUser()
           localStorage.setItem("token", response.token)
           if (savedToken){
             isValidToken(savedToken).then(tokenData=>{
@@ -46,7 +56,13 @@ function Login(props) {
           }
           setUserName('');
           setPassword('');
-          navigate("/dashboard")
+          getAllOwners(response.user.id).then((data) => {
+            props.setUser(data);
+            console.log("+++++++++++++++++")
+            console.log(data)
+            console.log("+++++++++++++++++")
+            navigate("/dashboard")
+          })
           // perform any actions needed for successful login
         } else {
           alert("Invalid Credentials")
