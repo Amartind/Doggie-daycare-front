@@ -137,7 +137,7 @@ module.exports = {
     addapet,
     deletepet,
     editOwner,
-    getAllMeetups,
+    // getAllMeetups,
     makeAMeetup,
     editaMeetup,
     deleteAMeetup,
