@@ -74,8 +74,9 @@ function Profile(props) {
 
   return (
     <div className="container">
-      <p>Welcome {user.name}</p>
-      <form className="signupform grid gap-4 grid-cols-1 grid-rows-6">
+      <p className="smaller text-lg">Welcome {user.name}!</p>
+      <p className="smaller">If any of your info has changed please update it here:</p>
+      <form className="signupform smaller grid gap-4 grid-cols-1 grid-rows-6">
         <input
           value={fullname}
           name="fullname"

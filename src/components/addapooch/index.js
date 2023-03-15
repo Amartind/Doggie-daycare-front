@@ -52,7 +52,7 @@ function Addpooch() {
     };
     
     return (
-      <div className="dogcontainer flex flex-col flex-auto">
+      <div className="dogcontainer flex flex-col flex-auto"> <br/>
         <p className="flex justify-center text-lg">Tell Us About Your Dog</p>
         <br/>
         <form className="dogform grid p-2 centerMe grid-cols-2 grid-rows-6">
