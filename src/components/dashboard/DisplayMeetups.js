@@ -11,9 +11,12 @@ export default function DisplayMeetup (props) {
     const handleDeleteBtnClick = (e) => {
       console.log(props.Meetup.id)
       console.log(props.token)
+      
       console.log("end dashboard")
         deleteAMeetup(props.Meetup.id, props.token).then((data) => {
-            navigate("/dashboard")
+            console.log(data)
+            props.fetchData();
+            // navigate("/dashboard")
         });
       };
     return (
