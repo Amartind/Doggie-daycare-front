@@ -2,7 +2,18 @@ import React from 'react';
 import './style.css';
 
 function MyDoggies(props) {
-    const { pets } = props;
+    const [user, setUser] = useState({});
+    const [petsName, setPetsName] = useState('');
+    const [petsGender, setPetsGender] = useState('');
+    const [petsAge, setPetsAge] = useState('');
+    const [petsBreed, setPetsBreed] = useState('');
+    const [petsPersonality, setPetsPersonality] = useState('');
+    const [petsSnipsnip, setPetsSnipsnip] = useState('');
+    const [petsVaccinated, setPetsVaccinated] = useState('');
+    const fetchUser = () => {
+        getAllPets(params.id)
+    }
+
 
     const handleDelete = (id) => {
         // create a new array with all dogs except for the one with the matching id
@@ -13,7 +24,7 @@ function MyDoggies(props) {
 
     return (
         <div className="mydoggies-container">
-            <p>My Doggies</p>
+            <p className='flex justify-center text-lg'> My Doggies</p>
             <div className="dog-container">
                 {pets && pets.map((dog) => (
                     <div className="dog" key={dog.id}>

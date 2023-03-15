@@ -39,7 +39,7 @@ const editaMeetup = function (meetupObj, meetupid, token) {
     }).then((res) => res.json());
 }
 
-const deleteAMeetup = function (meetupid,token) {
+const deleteAMeetup = function (meetupid, token) {
     return fetch(`${URL_PREFIX}/api/meetups/${meetupid}`, {
         method: "DELETE",
         headers: {
@@ -108,7 +108,7 @@ const editOwner = function (ownerObj, ownerId, token) {
     }).then((res) => res.json());
 }
 
-const getAllMeetups = function(token) {
+const getAllMeetupsWithToken = function (token) {
     return fetch(`${URL_PREFIX}/api/meetups/`, {
         method: "GET",
         headers: {
@@ -117,7 +117,7 @@ const getAllMeetups = function(token) {
     }).then((res) => res.json());
 }
 
-const getMeetupById = function(id, token) {
+const getMeetupById = function (id, token) {
     return fetch(`${URL_PREFIX}/api/meetups/${id}`, {
         method: "GET",
         headers: {
@@ -126,7 +126,7 @@ const getMeetupById = function(id, token) {
     }).then((res) => res.json());
 }
 
-const searchByRadius = function (username, radius) {
+const searchByRadius = function (username, radius, token) {
     return fetch(`${URL_PREFIX}/api/meetups/${username}/${radius}`, {
         method: "GET",
         headers: {

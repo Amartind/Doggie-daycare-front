@@ -7,7 +7,7 @@ import './style.css'
 
 
 function Profile(props) {
-  const params = useParams();
+
   const [user, setUser] = useState({});
   const [isMyPage, setIsMyPage] = useState(false);
   const [fullname, setFullName] = useState('');
@@ -38,7 +38,7 @@ function Profile(props) {
       return setFullName(value)
     } else if (name === 'email') {
       return setEmail(value)
-    }else if (name === 'password') {
+    } else if (name === 'password') {
       return setPassword(value)
     } else if (name === 'phone') {
       return setPhone(value)
@@ -51,17 +51,17 @@ function Profile(props) {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
     editOwner(
-    {
-      name:setFullName()||user.name,
-      email:setEmail()||user.email,
-      phone:setPhone()||user.phone,
-      password:setPassword()||user.password,
-      username:setUserName()||user.username,
-      address:setAddress()||user.address
-    },
-    user.id,
-    localStorage.getItem("token")
-    ).then((data) =>{
+      {
+        name: setFullName() || user.name,
+        email: setEmail() || user.email,
+        phone: setPhone() || user.phone,
+        password: setPassword() || user.password,
+        username: setUserName() || user.username,
+        address: setAddress() || user.address
+      },
+      user.id,
+      localStorage.getItem("token")
+    ).then((data) => {
       console.log(data)
     })
   };
@@ -126,8 +126,11 @@ function Profile(props) {
           Submit
         </button>
       </form>
+
     </div>
   );
+
+
 
 
 }
