@@ -20,7 +20,7 @@ export default function Dashboard(props) {
           <div className='nothing'>
         <h3 className="Center">Doggie Dates You're Hosting</h3>
         <div className='Meetupbox'>
-        {props.user.Meetups.map((meetup)=>(<DisplayMeetup token={props.token} Meetup={meetup}/>))}
+        {props.user.Meetups.map((meetup)=>(<DisplayMeetup token={props.token} Meetup={meetup} userId={props.userId} setUser={props.setUser}/>))}
         </div>
        
         </div>
