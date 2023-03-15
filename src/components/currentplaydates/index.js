@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { searchByRadius } from '../../utils/API';
 import './style.css'
 
-
-
 function Currentdates() {
     const [filterLocation, setFilterLocation] = useState('');
     const [savedLocation, setSavedLocation] = useState(false);
@@ -14,15 +12,6 @@ function Currentdates() {
         return
     }
 
-    // get the default search data for 20 miles.
-    console.log("Calling the searchByRadius function!");
-    const searchResults = searchByRadius(20, savedToken)
-        .then((response) => {
-            if (response) {
-                console.log(response);
-            }
-        }
-        );
     // Executing the value and name of the input on change
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -41,12 +30,17 @@ function Currentdates() {
         }
     };
 
-
     // Prevents refreshing the page a default behavior
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        const searchResults = searchByRadius(radius, savedToken)
+        .then((data)=>{
+            console.log(data)
+            for (let item of data){
+                console.log(item.distance);
+            }
+        });
     };
-
 
     return (
         <div className="datemaincontainer  flex justify-center h-screen m-1">
@@ -54,24 +48,6 @@ function Currentdates() {
                 <p className='title flex justify-center text-lg'>View Play Dates</p><br/>
                 <form className="dateform flex flex-col max-h-fit">
                     <div className="filterContainer flex flex-auto flex-row flex-wrap">
-                        <input
-                            value={filterLocation}
-                            name="filterLocation"
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder='Location'
-                            className='filterLocation dateinput flex-auto inputfield'
-                        />
-                        <div className='flex flex-col max-h-fit'>
-                            <sub>Use saved location?</sub>
-                            <input
-                                value={savedLocation}
-                                name="savedLocation"
-                                onChange={handleInputChange}
-                                type='checkbox'
-                                className='savedLocation dateinput flex-auto'
-                            />
-                        </div>
                         <select
                             className="radius dateinput flex-auto inputfield"
                             data-te-select-clear-button="true"
@@ -85,15 +61,8 @@ function Currentdates() {
                             <option value="50">50 miles</option>
                             <option value="100">100 miles</option>
                             <option value="250">250 miles</option>
+                            <option value="5000">5000 miles</option>
                         </select>
-                        <input
-                            value={breed}
-                            name='breed'
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder='Breed'
-                            className='breed dateinput flex-auto inputfield'
-                        />
                         <button
                             className="dateButton"
                             type="button"
