@@ -22,7 +22,11 @@ const Navbar = (props) => {
                  {/* <p className="text-5xl flex justify-center flex-auto">Doggie Daycare</p> */}
                  <div className="Navbar grid grid-rows-1 grid-cols-2 flex-auto">
                      {/* <h2 className="navlink flex-auto">Welcome {user.name}</h2> */}
+<<<<<<< HEAD
                      {props.isLoggedIn?<Link to="/dashboard" className="navlink p-2 flex-auto horizontal up sm:flex-col">Dashboard</Link>:
+=======
+                     {props.isLoggedIn?<Link to="/dashboard" className="navlink p-2 flex-auto horizontal up"> Dashboard</Link>:
+>>>>>>> dev
                      <Link to="/" className="navlink p-2 flex-auto horizontal up">Home</Link>}
      
                      {props.isLoggedIn?<div className="signedin justify-self-end flex-auto">
@@ -35,7 +39,7 @@ const Navbar = (props) => {
                               <div className="grid grid-rows-4">
                               <Link to={`/profile/${props.userId}`}  className="dropdownlink p-4 navlink flex-auto color" >Edit Profile</Link>
                               <Link to="/mydoggies" className="dropdownlink p-4 navlink flex-auto color">My Dogs</Link>
-                              <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto color" >Add Dog</Link>
+                              <Link to="/addapooch" className="dropdownlink p-4 navlink flex-auto color" >Add a Dog</Link>
                               <Link to="/" className="dropdownlink p-4 navlink flex-auto color" onClick={hello}>Logout</Link>
 
                             </div>
