@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import './style.css'
-import { addapet } from "../../utils/API";
+import { addapet, getAllOwners } from "../../utils/API";
 
 
 function Addpooch() {
-
+    const params = useParams();
     const [dogname, setDogName] = useState('');
     const [doggender, setDogGender] = useState('');
     const [dogage, setDogAge] = useState('');
@@ -12,7 +13,7 @@ function Addpooch() {
     const [dogpersonality, setDogPersonality] = useState('');
     const [snipsnip, setSnipSnip] = useState(false);
     const [vaccinated, setVaccinated] = useState(false);
- 
+    const [user, setUser] = useState({});
     // const femaleSelector = document.getElementById("female")
   
     const handleInputChange = (e) => {
@@ -41,16 +42,32 @@ function Addpooch() {
         else return setVaccinated(true)
 
       }
+      
     } 
     
    
     const handleFormSubmit = (e) => {
       // Preventing the default behavior of the form submit (which is to refresh the page)
       e.preventDefault();
+      console.log("submitted pet data")
       
+      getAllOwners(params.id).then((data) => {
+        setUser(data);
+      const petObj= {
+        name:dogname,
+        gender:doggender,
+        age:dogage,
+        breed:dogbreed,
+        personality:dogpersonality,
+        spayed_neutered:snipsnip,
+        vaccinated:vaccinated
+      }
+      addapet(petObj,localStorage.getItem("token")).then((data) =>{
+        console.log(data)
+      })
       
-    };
-    
+    });
+  }
     return (
       <div className="dogcontainer flex flex-col flex-auto">
         <p className="flex justify-center text-lg">Tell Us About Your Dog</p>
