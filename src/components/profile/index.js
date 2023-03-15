@@ -9,7 +9,7 @@ import './style.css'
 
 function Profile(props) {
   const params = useParams();
-  const [user, setUser] = useState({}); 
+  const [user, setUser] = useState({});
   const [isMyPage, setIsMyPage] = useState(false);
   const [fullname, setFullName] = useState('');
   const [username, setUserName] = useState('');
@@ -17,7 +17,7 @@ function Profile(props) {
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
-  
+
   const fetchUser = () => {
     getAllOwners(params.id).then((data) => {
       setUser(data);
@@ -40,36 +40,36 @@ function Profile(props) {
       return setFullName(value)
     } else if (name === 'email') {
       return setEmail(value)
-    }else if (name === 'password') {
+    } else if (name === 'password') {
       return setPassword(value)
     } else if (name === 'phone') {
       return setPhone(value)
     } else if (name === 'address') {
       return setAddress(value)
     }
-    
+
   };
 
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
-    
-    const userinfo ={
+
+    const userinfo = {
       name: fullname || user.name,
-      email:email || user.email,
-      phone:phone || user.phone,
-      password: 
-      // hashSync(password, 4) ||
-       user.password,
-      username:username || user.username,
-      address:address || user.address
+      email: email || user.email,
+      phone: phone || user.phone,
+      password:
+        // hashSync(password, 4) ||
+        user.password,
+      username: username || user.username,
+      address: address || user.address
     }
     console.log(userinfo)
     editOwner(
-    userinfo,
-    user.id,
-    localStorage.getItem("token")
-    ).then((data) =>{
+      userinfo,
+      user.id,
+      localStorage.getItem("token")
+    ).then((data) => {
       console.log(data)
     })
   };
