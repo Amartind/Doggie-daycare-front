@@ -1,7 +1,7 @@
 import React, { useState, useEffect  } from 'react';
 import { useParams } from "react-router-dom";
 import './style.css'
-import { makeAMeetup, getAllOwners, } from "../../utils/API";
+import { makeAMeetup, getAllOwners, getAllMeetups} from "../../utils/API";
 import { useNavigate } from "react-router-dom";
 
 
@@ -52,14 +52,15 @@ function CreateADate(props) {
         console.log(dateObj)
         console.log(props.token)
         console.log("__begin_meetup_submit__")
-        makeAMeetup(dateObj, props.token)
-        setEventTitle("");
-        setDate("");
-        setLocation("");
-        setDateNotes("")
-        getAllOwners(props.userId).then((data)=>{
-            props.setUser(data)
-            navigate("/dashboard")
+        makeAMeetup(dateObj, props.token).then(_=>{
+            setEventTitle("");
+            setDate("");
+            setLocation("");
+            setDateNotes("")
+            getAllOwners(props.userId).then((data)=>{
+                props.setUser(data)
+                navigate("/dashboard")
+            })
         })
     };
     

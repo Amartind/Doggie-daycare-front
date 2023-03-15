@@ -31,7 +31,7 @@
 
 .delete{
     max-width: fit-content;
-    margin-left: 33%;
+    margin-left: 35%;
     background-color: white; 
     color: black; 
     border: 3px solid orange;
@@ -41,4 +41,10 @@
 .delete:hover {
     background-color: orange;
     color: white;
+}
+
+.underline{
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
 }
