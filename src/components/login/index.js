@@ -17,20 +17,17 @@ function Login(props) {
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
     const { name, value } = e.target;
-
     return name === 'username' ? setUserName(value) : setPassword(value);
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
     const owner = {
       username: username,
       password: password
     };
 
     login(owner)
-
       .then((response) => {
         if (response.token) {
           console.log('Login successful!');
@@ -62,7 +59,6 @@ function Login(props) {
       .catch(error => {
         console.error('Failed to send request:', error);
       });
-
   };
 
 
