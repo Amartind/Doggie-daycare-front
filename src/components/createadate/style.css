@@ -17,7 +17,7 @@
 }
 
 .dateform{
-    /* border: 5px solid rgb(16, 14, 117); */
+    
     display: flex;
     justify-content: space-evenly;
     padding: 5px;
@@ -44,3 +44,4 @@
     margin-top: 0%;
     padding-top: 7px;
 }
+

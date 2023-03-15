@@ -121,7 +121,7 @@ function Addpooch() {
                     />
                 
                 <div className="grid grid-rows-1">
-                    <label htmlFor="snipsnip"> I'm neutered/spayed?</label>
+                    <label htmlFor="snipsnip"> I'm neutered/spayed? ✂️</label>
                     <input
                         value={snipsnip}
                         name="snipsnip"

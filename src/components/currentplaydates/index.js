@@ -86,14 +86,7 @@ function Currentdates() {
                             <option value="100">100 miles</option>
                             <option value="250">250 miles</option>
                         </select>
-                        <input
-                            value={breed}
-                            name='breed'
-                            onChange={handleInputChange}
-                            type="text"
-                            placeholder='Breed'
-                            className='breed dateinput flex-auto inputfield'
-                        />
+                     
                         <button
                             className="dateButton"
                             type="button"
@@ -105,11 +98,11 @@ function Currentdates() {
                         <card className="displayCard flex flex-col flex-auto ">
                             <img src='../../public/assets/Puddle.png' className='object-contain md:object-scale-down pupimg' alt='petnamehere'></img>
                             <p className='displayName'>Puddle</p>
-                            <p className='displayAge'>1</p>
-                            <p className='displayBreed'>Standard Poodle</p>
-                            <p className='displayPersonality'>Chill goofy</p>
-                            <p className='displaySnipSnip'>No</p>
-                            <p className='displayVaccinated'>Yes</p>
+                            <p className='displayAge'>Age: 1</p>
+                            <p className='displayBreed'> Breed: Standard Poodle</p>
+                            <p className='displayPersonality'>Personality: Chill goofy</p>
+                            <p className='displaySnipSnip'>✂️ No</p>
+                            <p className='displayVaccinated'>💉 Yes</p>
                             <p className='displayLocation '>Edith Moulton Park</p>
                         </card>
                     </div>

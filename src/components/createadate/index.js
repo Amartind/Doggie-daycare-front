@@ -19,9 +19,7 @@ function CreateADate(props) {
     const fetchUser = () => {
         getAllOwners(props.userId).then((data) => {
           setUser(data);
-          console.log(data)
-          console.log(props.userId);
-        
+                
         })
       }
 
@@ -52,9 +50,6 @@ function CreateADate(props) {
             OwnerId: props.userId
         }
         console.log("__begin_meetup_submit__")
-        console.log(dateObj)
-        console.log(props.userId)
-        console.log(params.id)
         makeAMeetup(dateObj, params.id)
         setEventTitle("");
         setDate("");
