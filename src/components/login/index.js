@@ -29,10 +29,7 @@ function Login(props) {
     const fetchUser = () => {
       console.log(props.userId)
       getAllOwners(props.userId).then((data) => {
-        props.setUser(data);
-        console.log("+++++++++++++++++")
-        console.log(data)
-        console.log("+++++++++++++++++")
+
       })
     };
 
@@ -58,9 +55,6 @@ function Login(props) {
           setPassword('');
           getAllOwners(response.user.id).then((data) => {
             props.setUser(data);
-            console.log("+++++++++++++++++")
-            console.log(data)
-            console.log("+++++++++++++++++")
             navigate("/dashboard")
           })
           // perform any actions needed for successful login
