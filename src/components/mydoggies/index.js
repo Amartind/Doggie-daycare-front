@@ -21,12 +21,6 @@ function MyDoggies(props) {
         fetchUser();
     }, []);
 
-    const handleDelete = (petId) => {
-        deletepet(petId).then(() => {
-            fetchUser();
-        });
-    }
-
     return (
         <div className="mydoggies-container">
             {user.username ? (
@@ -41,7 +35,7 @@ function MyDoggies(props) {
                             spayed_neutered={pets.spayed_neutered}
                             vaccinated={pets.vaccinated}
                         />
-                        <button onClick={() => handleDelete(pets.petsId)}>Delete</button>
+
                     </div>
                 ))
             ) : (

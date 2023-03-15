@@ -47,7 +47,7 @@ function App() {
       <Navbar isLoggedIn={isLoggedIn} userId={userId} logout={logout}/>
       <Routes>
         <Route path='/' element={<Homepage isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
-        <Route path='/dashboard' element={<Dashboard isLoggedIn={isLoggedIn} token={token} userId={userId} user={user}/>}></Route>
+        <Route path='/dashboard' element={<Dashboard isLoggedIn={isLoggedIn} token={token} userId={userId} user={user} setUser={setUser}/>}></Route>
         <Route path='/createaplaydate' element={<CreateADate isLoggedIn={isLoggedIn} token={token} userId={userId} setUser={setUser}/>}></Route>
         <Route path='/currentplaydates' element={<Currentdates />}></Route>
         <Route path='/addapooch' element={<Addpooch isLoggedIn={isLoggedIn} token={token} userId={userId}/>}></Route>
