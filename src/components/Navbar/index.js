@@ -19,7 +19,7 @@ const Navbar = (props) => {
              <div >
                 <img className="logo" src={LOGO} alt="Doggie Dates"/>
                  {/* <p className="text-5xl flex justify-center flex-auto">Doggie Daycare</p> */}
-                 <div className="Navbar grid grid-rows-1 grid-cols-2 flex-auto md:grid-rows-5">
+                 <div className="Navbar grid grid-rows-1 grid-cols-2 flex-auto">
                      {/* <h2 className="navlink flex-auto">Welcome {user.name}</h2> */}
                      {props.isLoggedIn?<Link to="/dashboard" className="navlink p-2 flex-auto horizontal up ">Dashboard</Link>:
                      <Link to="/" className="navlink p-2 flex-auto horizontal up">Home</Link>}
