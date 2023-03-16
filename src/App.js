@@ -12,7 +12,7 @@ import Dashboard from './components/dashboard';
 import Homepage from './components/homepage';
 import Localpups from './components/localpups';
 import React,{useState,useEffect} from "react";
-const { isValidToken} = require("./utils/API.js");
+const isValidToken = require("./utils/API.js");
 
 
 
