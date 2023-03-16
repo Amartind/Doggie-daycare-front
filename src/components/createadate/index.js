@@ -1,7 +1,8 @@
 import React, { useState, useEffect  } from 'react';
 import { useParams } from "react-router-dom";
 import './style.css'
-import { makeAMeetup, getAllOwners, getAllMeetups} from "../../utils/API";
+import  makeAMeetup from "../../utils/API";
+import  getAllOwners from "../../utils/API";
 import { useNavigate } from "react-router-dom";
 
 

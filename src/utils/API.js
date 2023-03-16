@@ -128,7 +128,7 @@ const searchByRadius = async function (radius, token) {
     }).then((res) => res.json());
 }
 
-module.exports = {
+export default {
     getAllPets,
     getAllOwners,
     login,

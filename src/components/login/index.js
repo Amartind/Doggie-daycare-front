@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import './style.css'
-const { getAllPets, getAllOwners, isValidToken, login, signup, addapet, deletepet, editOwner } = require("../../utils/API.js");
-
-
+import getAllOwners from "../../utils/API";
+import isValidToken from "../../utils/API";
+import login from "../../utils/API";
 
 
 function Login(props) {

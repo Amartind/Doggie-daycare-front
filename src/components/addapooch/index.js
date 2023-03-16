@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import './style.css'
-import { addapet, getAllOwners } from "../../utils/API";
+import addapet from "../../utils/API";
+import getAllOwners from "../../utils/API";
 
 
 function Addpooch() {
