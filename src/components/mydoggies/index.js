@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getAllOwners, getAllPets, deletepet } from "../../utils/API"
+import { getAllOwners } from "../../utils/API"
 import MydoggiesCard from "../mydoggiesCard"
 import './style.css';
 
