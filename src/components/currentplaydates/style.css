@@ -1,33 +1,55 @@
+.mainBody{
+    border: 5px solid blue;
+    margin: 5px;
+}
 
-.datemaincontainer{
-    min-width: fit-content;
-    max-height: 70vh;
-    border: 5px solid rgb(31, 199, 25);
-    max-width: 70%;
+.button{
+    width: 100px;
+}
+
+.col {
+    float:left;
+}
+
+.row{
+    justify-content: center;
+}
+
+.bold{
+    font-weight: bolder;
+    color: blue;
+}
+
+.center{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.jasonsBox{
+    border: 5px solid cyan;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+.Meetupbox{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2em;
+}
+
+.nothing{
+    height: 75vh;
+}
+
+.the-form{
+    width:98px;
+    height: 3em;
+    margin:1em;
     margin-left: auto;
     margin-right: auto;
-}
-.filterContainer{
-    border: 5px solid rgb(16, 14, 117);
-    max-width: fit-content;
-}
-.displayArea{
-    min-width: 10rem;
-}
-.displayCard{
-    border: 5px solid rgb(33, 187, 192);
-    max-width: fit-content;
-}
-.pupimg{
-    max-height: 100px;
-    max-width: 100px;
-}
-.title{
-    max-height: fit-content;
-}
-.dateform{
-    max-width: fit-content
-}
-.dateinput{
-    max-width: 150px;
 }

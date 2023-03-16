@@ -8,6 +8,7 @@ export default function Currentdates() {
     const [radius, setRadius] = useState('');
     const savedToken = localStorage.getItem("token");
     const [dataState, setDataState] = useState('');
+    const [searchState, setSearchState] = useState('');
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -25,19 +26,16 @@ export default function Currentdates() {
                     console.log(item);
                 }
             });
-            console.log(searchResults);
+        console.log(searchResults);
     };
-
     return (
-        <div className="datemaincontainer  flex justify-center h-screen m-1">
-            <div className=' flex flex-col '><br />
-                <p className='title flex justify-center text-lg'>View Play Dates</p><br />
-                <form className="dateform flex flex-col max-h-fit">
-                    <div className="filterContainer flex flex-auto flex-row flex-wrap">
+        <div className="mainBody flex flex-auto flex-col">
+            <div className='nothing justify-center'>
+            <h3 className="center">View Play Dates</h3>
+                <form className="the-form flex flex-col justify-center max-h-fit">
+                    <div className="row">
                         <select
-                            className="radius dateinput flex-auto inputfield"
-                            data-te-select-clear-button="true"
-                            data-te-select-placeholder="Example placeholder"
+                            className="col radius dateinput flex-auto inputfield"
                             onChange={handleInputChange}
                             value={radius}
                             name="radius">
@@ -47,36 +45,25 @@ export default function Currentdates() {
                             <option value="50">50 miles</option>
                             <option value="100">100 miles</option>
                             <option value="250">250 miles</option>
-                            <option value="5000">5000 miles</option>
                         </select>
-                     
                         <button
-                            className="dateButton"
-                            type="button"
+                            className="col button rounded datebutton loginbtn" 
+                            type="submit"
                             onClick={handleFormSubmit}>
                             Search
                         </button>
                     </div>
-                    <div className='displayArea flex flex-row gap-1 flex-wrap'>
-                        <card className="displayCard flex flex-col flex-auto ">
-                            <img src='../../public/assets/Puddle.png' className='object-contain md:object-scale-down pupimg' alt='petnamehere'></img>
-                            <p className='displayName'>Puddle</p>
-                            <p className='displayAge'>Age: 1</p>
-                            <p className='displayBreed'> Breed: Standard Poodle</p>
-                            <p className='displayPersonality'>Personality: Chill goofy</p>
-                            <p className='displaySnipSnip'>✂️ No</p>
-                            <p className='displayVaccinated'>💉 Yes</p>
-                            <p className='displayLocation '>Edith Moulton Park</p>
-                        </card>
-                    </div>
                 </form>
-                <div className='displayArea flex flex-row gap-1 flex-wrap'>
+                <div className='flex justify-center flex-auto'>
                     {(dataState.length > 0) ? (
-                        <div className='Meetupbox'>
-                            <h3 className="Center">Doggie Dates within {radius} miles of your location.</h3>
-                            {dataState.map((meetup) => (<DisplaySearch Meetup={meetup} />))}
+                        
+                        <div>
+                            <h4 className="center">Doggie Dates within {radius} miles of your location.</h4>
+                            <div className='Meetupbox'>
+                                {dataState.map((meetup) => (<DisplaySearch Meetup={meetup} />))}
+                            </div>
                         </div>) :
-                        (<div><h2 className="title flex justify-center">Welcome! <h4><br />If this is your first time here let me show you around!</h4><hr /></h2>
+                        (<div><h2 className="title flex justify-center">Welcome!</h2>
                         </div>)}
                 </div>
             </div>
