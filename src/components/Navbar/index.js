@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
-import API from "../../utils/API";
+import { API } from "../../utils/API";
 import './style.css'
 import { useParams } from "react-router-dom";
 import LOGO from "./LogoDogs.png";

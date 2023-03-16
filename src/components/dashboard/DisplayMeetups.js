@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import './style.css'
 import dayjs from "dayjs";
-import deleteAMeetup from "../../utils/API.js";
-import getAllOwners  from "../../utils/API.js";
+import { deleteAMeetup } from "../../utils/API.js";
+import {getAllOwners}  from "../../utils/API.js";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
