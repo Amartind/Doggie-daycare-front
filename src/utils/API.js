@@ -1,15 +1,15 @@
 const URL_PREFIX = "https://doggiedates.herokuapp.com";
 
 
-const getAllPets = function () {
+export const getAllPets = function () {
     return fetch(`${URL_PREFIX}/api/pets`).then((res) => res.json());
 }
 
-const getAllOwners = function (id) {
+export const getAllOwners = function (id) {
     return fetch(`${URL_PREFIX}/api/owners/${id}`).then((res) => res.json());
 }
 
-const makeAMeetup = function (meetupObj, token) {
+export const makeAMeetup = function (meetupObj, token) {
     return fetch(`${URL_PREFIX}/api/meetups/`, {
         method: "POST",
         body: JSON.stringify(meetupObj),
@@ -20,7 +20,7 @@ const makeAMeetup = function (meetupObj, token) {
     }).then((res) => res.json());
 }
 
-const editaMeetup = function (meetupObj, meetupid, token) {
+export const editaMeetup = function (meetupObj, meetupid, token) {
     return fetch(`${URL_PREFIX}/api/meetups/${meetupid}`, {
         method: "PUT",
         body: JSON.stringify(meetupObj),
@@ -31,7 +31,7 @@ const editaMeetup = function (meetupObj, meetupid, token) {
     }).then((res) => res.json());
 }
 
-const deleteAMeetup = function (meetupid,token) {
+export const deleteAMeetup = function (meetupid,token) {
     return fetch(`${URL_PREFIX}/api/meetups/${meetupid}`, {
         method: "DELETE",
         headers: {
@@ -41,7 +41,7 @@ const deleteAMeetup = function (meetupid,token) {
 }
 
 
-const isValidToken = function (token) {
+export const isValidToken = function (token) {
     return fetch(`${URL_PREFIX}/api/owners/isValidToken`, {
         headers: {
             "authorization": `Bearer ${token}`,
@@ -49,7 +49,7 @@ const isValidToken = function (token) {
     }).then((res) => res.json());
 }
 
-const login = function (ownerObj) {
+export const login = function (ownerObj) {
     return fetch(`${URL_PREFIX}/api/owners/login`, {
         method: "POST",
         body: JSON.stringify(ownerObj),
@@ -59,7 +59,7 @@ const login = function (ownerObj) {
     }).then((res) => res.json());
 }
 
-const signup = function (ownerObj) {
+export const signup = function (ownerObj) {
     return fetch(`${URL_PREFIX}/api/owners`, {
         method: "POST",
         body: JSON.stringify(ownerObj),
@@ -69,7 +69,7 @@ const signup = function (ownerObj) {
     }).then((res) => res.json());
 }
 
-const addapet = function (petObj, token) {
+export const addapet = function (petObj, token) {
     return fetch(`${URL_PREFIX}/api/pets`, {
         method: "POST",
         body: JSON.stringify(petObj),
@@ -80,7 +80,7 @@ const addapet = function (petObj, token) {
     }).then((res) => res.json());
 }
 
-const deletepet = function (petId, token) {
+export const deletepet = function (petId, token) {
     return fetch(`${URL_PREFIX}/api/pets/${petId}`, {
         method: "DELETE",
         headers: {
@@ -89,7 +89,7 @@ const deletepet = function (petId, token) {
     }).then((res) => res.json());
 }
 
-const editOwner = function (ownerObj, ownerId, token) {
+export const editOwner = function (ownerObj, ownerId, token) {
     return fetch(`${URL_PREFIX}/api/owner/${ownerId}`, {
         method: "PUT",
         body: JSON.stringify(ownerObj),
@@ -100,7 +100,7 @@ const editOwner = function (ownerObj, ownerId, token) {
     }).then((res) => res.json());
 }
 
-const getAllMeetups = function(token) {
+export const getAllMeetups = function(token) {
     return fetch(`${URL_PREFIX}/api/meetups/`, {
         method: "GET",
         headers: {
@@ -109,7 +109,7 @@ const getAllMeetups = function(token) {
     }).then((res) => res.json());
 }
 
-const getMeetupById = function(id, token) {
+export const getMeetupById = function(id, token) {
     return fetch(`${URL_PREFIX}/api/meetups/${id}`, {
         method: "GET",
         headers: {
@@ -118,7 +118,7 @@ const getMeetupById = function(id, token) {
     }).then((res) => res.json());
 }
 
-const searchByRadius = async function (radius, token) {
+export const searchByRadius = async function (radius, token) {
     return await fetch(`${URL_PREFIX}/api/meetups/search/${radius}`, {
         method: "GET",
         headers: {
@@ -128,19 +128,19 @@ const searchByRadius = async function (radius, token) {
     }).then((res) => res.json());
 }
 
-export default {
-    getAllPets,
-    getAllOwners,
-    login,
-    isValidToken,
-    signup,
-    addapet,
-    deletepet,
-    editOwner,
-    getAllMeetups,
-    makeAMeetup,
-    editaMeetup,
-    deleteAMeetup,
-    searchByRadius,
-    getMeetupById
-}
+// export default {
+//     getAllPets,
+//     getAllOwners,
+//     login,
+//     isValidToken,
+//     signup,
+//     addapet,
+//     deletepet,
+//     editOwner,
+//     getAllMeetups,
+//     makeAMeetup,
+//     editaMeetup,
+//     deleteAMeetup,
+//     searchByRadius,
+//     getMeetupById
+// }

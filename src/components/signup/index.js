@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import './style.css'
-import signup from "../../utils/API";
+import { signup } from "../../utils/API";
 
 function Signup(props) {
   const [name, setName] = useState('');
