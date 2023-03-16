@@ -4,7 +4,6 @@ import API from "../../utils/API";
 import './style.css'
 import { useParams } from "react-router-dom";
 import LOGO from "./LogoDogs.png";
-const { isValidToken} = require("../../utils/API.js");
 
 const Navbar = (props) => {
     const params = useParams();
